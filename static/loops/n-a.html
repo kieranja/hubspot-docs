@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1> </h1>
+
+<p>For loops can be used in HubL to iterate through sequences of objects. They will most commonly be used with rendering <a href="/docs/building-blocks/templates/blog-template-markup">blog content</a> in a listing format, but they can also be used to sort through other sequence variables.</p>
+
+<p>For loops begin with a <code>{% for %}</code> statement and end with an <code>{% endfor %}</code> statement. Within the <code>{% for %}</code> statement a single sequence item is named followed by <code>in</code> and then the name of the sequence. The code between the opening and closing <code>for</code> statements is printed with each iteration, and generally includes the printed variable of the individual sequence item. Below is the basic syntax of a for loop:</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% for item in items %}
+    {{ item }}
+{% endfor %}
+</code></pre>
+
+<p>Below is a basic example that shows how to print a sequence of variable values into a list.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set languages = ['HTML', 'CSS', 'Javascript', 'Python', 'Ruby', 'PHP,', 'Java'] %}
+
+&lt;h1&gt;Languages&lt;/h1&gt;;
+&lt;ul&gt;
+    {% for language in languages %}
+    &lt;li&gt;{{ language }}&lt;/li&gt;
+    {% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;h1&gt;Languages&lt;/h1&gt;
+&lt;ul&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;Javascript&lt;/li&gt;
+    &lt;li&gt;Python&lt;/li&gt;
+    &lt;li&gt;Ruby&lt;/li&gt;
+    &lt;li&gt;PHP&lt;/li&gt;
+    &lt;li&gt;Java&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

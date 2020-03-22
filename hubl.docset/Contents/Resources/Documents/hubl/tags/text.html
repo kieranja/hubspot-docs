@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Text</h1>
+
+<p>Creates a single line of text. This module can be useful to be mixed into your markup, when used in conjunction with the no&#95;wrapper=True parameter. For example, if you wanted your end users to be able to define a destination of a predefined anchor, you could populate the href with a text module with <strong>no&#95;wrapper=True</strong>.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% text "text" %}
+{% text "simple_text_field" label="Enter text here", value="This is the default value for this text field" %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span id="hs_cos_wrapper_simple_text_field" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="text"&gt;This is the default value for this text field&lt;/span&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>value</td>
+  <td>String</td>
+  <td>Sets the default text of the single line text field.</td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>       | 
+</code></pre>
+
+    </div>
+</body>
+</html>

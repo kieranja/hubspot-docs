@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>get_public_template_url_by_id</h1>
+
+<p>This function works just like <code>get_public_template_url</code>, returning public URL of a specified template or code file. The only difference is the parameter of this function is the template ID (available in the URL of the template or coded file), instead of the Design Manager path.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ get_public_template_url_by_id('2778457004')  }} 
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">//cdn2.hubspot.net/hub/327485/hub_generated/style_manager/1431479563436/custom/page/Designers_2015/designer-doc-2105.min.js
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>template_id</td>
+  <td>Id</td>
+  <td>The ID number of the template of file.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

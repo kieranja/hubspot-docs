@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>geo_distance</h1>
+
+<p>Calculates the ellipsoidal 2D distance between two points on Earth.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">&lt;!-- in the example below the HubDB Location = 42.3667, -71.1060 (Cambridge, MA) | Chicago, IL = 37.3435, -122.0344 --&gt;
+{{ row.location | geo_distance(37.3435, -122.0344, "mi") }} MI
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">861.1655563461395 MI
+</code></pre>
+
+    </div>
+</body>
+</html>

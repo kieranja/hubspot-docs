@@ -1,0 +1,194 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Email variables</h1>
+
+<p>The following variables are specifically for HTML email templates or HubL template modules in email layouts.
+<table>
+<thead>
+<tr>
+  <th>Variable</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>background_color</td>
+  <td>String</td>
+  <td>Email-template only alias for the color and font setting described above.</td>
+</tr>
+<tr>
+  <td>body_border_color</td>
+  <td>String</td>
+  <td>Email-template only alias for the color and font setting described above.</td>
+</tr>
+<tr>
+  <td>body_border_color_choice</td>
+  <td>String</td>
+  <td>Email-template only alias for the color and font setting described above.</td>
+</tr>
+<tr>
+  <td>body_color</td>
+  <td>String</td>
+  <td>Email-template only alias for the color and font setting described above.</td>
+</tr>
+<tr>
+  <td>content.create_page</td>
+  <td>Boolean</td>
+  <td>This variable is True, if there is a web page version of the email.</td>
+</tr>
+<tr>
+  <td>content.email_body</td>
+  <td>Richtext</td>
+  <td>The main body of the email. This variable renders a rich text module.</td>
+</tr>
+<tr>
+  <td>content.emailbody_plaintext</td>
+  <td>String</td>
+  <td>The optional override of the plain text email body</td>
+</tr>
+<tr>
+  <td>content.from_name</td>
+  <td>String</td>
+  <td>The from name of the email sender</td>
+</tr>
+<tr>
+  <td>content.reply_to</td>
+  <td>String</td>
+  <td>The reply to address for the email</td>
+</tr>
+<tr>
+  <td>content.subject</td>
+  <td>String</td>
+  <td>The subject of the email</td>
+</tr>
+<tr>
+  <td>email_body_border_css</td>
+  <td>String</td>
+  <td>Email-template only alias for the color and font setting described above.</td>
+</tr>
+<tr>
+  <td>email_body_padding</td>
+  <td>string</td>
+  <td>The email body padding setting. This setting is located in Settings > Marketing > Email > Configuration > Size.</td>
+</tr>
+<tr>
+  <td>email_body_width</td>
+  <td>String</td>
+  <td>The email body width setting. This setting is located in Settings > Marketing > Email > Configuration > Size.</td>
+</tr>
+<tr>
+  <td>primary_accent_color</td>
+  <td>String</td>
+  <td>Email-template only alias for the color and font setting described above.</td>
+</tr>
+<tr>
+  <td>primary_font</td>
+  <td>Enumeration</td>
+  <td>Email-template only alias for the color and font setting described above.</td>
+</tr>
+<tr>
+  <td>primary_font_color</td>
+  <td>String</td>
+  <td>Email-template only alias for the color and font setting described above.</td>
+</tr>
+<tr>
+  <td>primary_font_size</td>
+  <td>String</td>
+  <td>Email-template only alias for the color and font setting described above.</td>
+</tr>
+<tr>
+  <td>primary_font_size_num</td>
+  <td>String</td>
+  <td>Prints the font size number from Settings > Marketing > Email > Configuration > Font. Excludes "px".</td>
+</tr>
+<tr>
+  <td>secondary_accent_color</td>
+  <td>String</td>
+  <td>Email-template only alias for the color and font setting described above.</td>
+</tr>
+<tr>
+  <td>secondary_font</td>
+  <td>Enumeration</td>
+  <td>Email-template only alias for the color and font setting described above.</td>
+</tr>
+<tr>
+  <td>secondary_font_color</td>
+  <td>String</td>
+  <td>Email-template only alias for the color and font setting described above.</td>
+</tr>
+<tr>
+  <td>secondary_font_size_num</td>
+  <td>String</td>
+  <td>Prints the font size number from Settings > Marketing > Email > Configuration > Font. Excludes "px".</td>
+</tr>
+<tr>
+  <td>site_settings.company_street_address_2</td>
+  <td>String</td>
+  <td>Prints the address line 2 from Settings > Marketing > Email > Configuration > Footer.</td>
+</tr>
+<tr>
+  <td>site_settings.office_location_name</td>
+  <td>String</td>
+  <td>Prints the office location name from Settings > Marketing > Email > Configuration > Footer.</td>
+</tr>
+<tr>
+  <td>subscription_confirmation_url</td>
+  <td>String</td>
+  <td>Prints the URL of the subscription preferences confirmation page. This URL is dynamically generated on send.</td>
+</tr>
+<tr>
+  <td>subscription_name</td>
+  <td>String</td>
+  <td>Prints the name of the Email Type specified for that email.</td>
+</tr>
+<tr>
+  <td>unsubscribe_anchor</td>
+  <td>String</td>
+  <td>Generates an anchor tag with the work "unsubscribe" linked to your unsubscribe page.</td>
+</tr>
+<tr>
+  <td>unsubscribe_link_all</td>
+  <td>String</td>
+  <td>Renders a link to unsubscribe from all email communications, as opposed to a link to manage subscription preferences.</td>
+</tr>
+<tr>
+  <td>unsubscribe_section</td>
+  <td>String</td>
+  <td>Renders an unsubscribe section that includes an unsubscribe link, as well as help text.</td>
+</tr>
+<tr>
+  <td>view_as_page_section</td>
+  <td>String</td>
+  <td>Generates a link with help text that leads to a webpage version of an email.</td>
+</tr>
+<tr>
+  <td>view_as_page_url</td>
+  <td>String</td>
+  <td>Generates a link that leads to a webpage version of an email.</td>
+</tr>
+</tbody>
+</table></p>
+
+    </div>
+</body>
+</html>

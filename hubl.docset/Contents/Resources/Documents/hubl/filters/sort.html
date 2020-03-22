@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>sort</h1>
+
+<p>Sorts an iterable. This filter requires all parameters to sort by an attribute in HubSpot. The first parameter is a boolean to reverse the sort order. The second parameter determines whether or not the sorting is case sensitive. And the final parameter specifies an attribute to sort by. In the example below, posts from a blog are rendered and alphabetized by name.
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>reverse <code>Required</code></td>
+  <td>Boolean value to reverse the sort order.</td>
+</tr>
+<tr>
+  <td>case_sensitive <code>Required</code></td>
+  <td>Boolean value that determines if the sorting is case sensitive. </td>
+</tr>
+<tr>
+  <td>attribute <code>Required</code></td>
+  <td>Attribute to sort by.</td>
+</tr>
+</tbody>
+</table></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set my_posts = blog_recent_posts('default', limit=5) %}
+
+{% for item in my_posts|sort(False, False, 'name') %}
+{{ item.name }}&lt;br&gt;
+
+
+{% endfor %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">A post&lt;br&gt;
+B post&lt;br&gt;
+C post&lt;br&gt;
+D post&lt;br&gt;
+E post&lt;br&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Email subscriptions</h1>
+
+<p>This module renders when an email recipient goes to edit his or her subscription preferences. It should be used on a <a href="https://knowledge.hubspot.com/cos-general/use-system-templates-to-customize-error-subscription-and-password-prompt-pages">Subscription Preference system template.</a></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% email_subscriptions "email_subscriptions" %}
+{% email_subscriptions "email_subscriptions" resubscribe_button_text='Yes, resubscribe me!', unsubscribe_single_text='Uncheck the types of emails you do not want to receive:', subheader_text='\n    If this is not your email address, please ignore this page since the email associated with this page was most likely forwarded to you.\n', unsubscribe_all_unsubbed_text='You are presently unsubscribed from all of our emails. Would you like to receive our emails again?', button_text='Update email preferences', label='Subscription Preferences', header='Communication Preferences', unsubscribe_all_option='Unsubscribe me from all mailing lists.', unsubscribe_all_text='Or check here to never receive any emails:' %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions" id="hs_cos_wrapper_email_subscriptions" style=""&gt;&lt;/span&gt;
+&lt;form id="email-prefs-form" method="post" name="email-prefs-form"&gt;
+    &lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions" id="hs_cos_wrapper_email_subscriptions" style=""&gt;&lt;/span&gt;
+    &lt;div class="page-header"&gt;
+        &lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions" id="hs_cos_wrapper_email_subscriptions" style=""&gt;&lt;/span&gt;
+        &lt;h1&gt;&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions" id="hs_cos_wrapper_email_subscriptions" style=""&gt;Communication Preferences&lt;/span&gt;&lt;/h1&gt;
+        &lt;h2&gt;&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions" id="hs_cos_wrapper_email_subscriptions" style=""&gt;example@email.com&lt;/span&gt;&lt;/h2&gt;&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions" id="hs_cos_wrapper_email_subscriptions" style=""&gt;&lt;br&gt;&lt;/span&gt;
+        &lt;p&gt;&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions" id="hs_cos_wrapper_email_subscriptions" style=""&gt;If this is not your email address, please ignore this page since the email associated with this page was most likely forwarded to you.&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="email-prefs" id="content"&gt;
+        &lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions" id="hs_cos_wrapper_email_subscriptions" style=""&gt;&lt;/span&gt;
+        &lt;p class="header"&gt;&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions" id="hs_cos_wrapper_email_subscriptions" style=""&gt;Uncheck the types of emails you do not want to receive:&lt;/span&gt;&lt;/p&gt;&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions" id="hs_cos_wrapper_email_subscriptions" style=""&gt;&lt;input name="email" type="hidden" value="example@email.com"&gt; &lt;input name="unsub_url" type="hidden" value=""&gt; &lt;input name="unsubed_all" type="hidden" value="false"&gt; &lt;input name="subscription_ids" type="hidden" value=""&gt;&lt;/span&gt;
+        &lt;div class="item"&gt;
+            &lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions" id="hs_cos_wrapper_email_subscriptions" style=""&gt;&lt;/span&gt;
+            &lt;div class="item-inner"&gt;
+                &lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions" id="hs_cos_wrapper_email_subscriptions" style=""&gt;&lt;/span&gt;
+                &lt;div class="checkbox-row"&gt;
+                    &lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions" id="hs_cos_wrapper_email_subscriptions" style=""&gt;&lt;span class="fakelabel"&gt;&lt;input id="id_0" name="id_0" type="checkbox"&gt; &lt;span&gt;Example Subscription #1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;p&gt;Your email type description&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="item"&gt;
+            &lt;div class="item-inner"&gt;
+                &lt;div class="checkbox-row"&gt;
+                    &lt;span class="fakelabel"&gt;&lt;input id="id_0" name="id_0" type="checkbox"&gt; &lt;span&gt;Example Subscription #2&lt;/span&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;p&gt;Your email type description&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="subscribe-options" style="margin-right: 0"&gt;
+            &lt;p class="header"&gt;Or check here to never receive any emails:&lt;/p&gt;
+            &lt;p&gt;&lt;label for="globalunsub"&gt;&lt;input id="globalunsub" name="globalunsub" type="checkbox"&gt; &lt;span&gt;Unsubscribe me from all mailing lists.&lt;/span&gt;&lt;/label&gt;&lt;/p&gt;
+        &lt;/div&gt;&lt;input class="hs-button primary" id="submitbutton" type="submit" value="Update email preferences"&gt;
+        &lt;div class="clearer"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>header</td>
+  <td>String</td>
+  <td>Renders text in an h1 tag above the subscription preferences form.</td>
+  <td>"Communication Preferences"</td>
+</tr>
+<tr>
+  <td>subheader_text</td>
+  <td>String</td>
+  <td>Populates text below the heading above the unsubscribe preferences.</td>
+  <td>"</td>
+</tr>
+</tbody>
+</table>
+
+<p>\n    If this is not your email address, please ignore this page since the email associated with this page was most likely forwarded to you.\n</p>
+
+<p>" | 
+| unsubscribe_single_text | String | Renders text in a</p>
+
+<p>&lt;</p>
+
+<p>p class="header"> above the subscription options. | "Uncheck the types of emails you do not want to receive:" | 
+| unsubscribe_all_text | String | Renders text in a</p>
+
+<p>&lt;</p>
+
+<p>p class="header"> above the unsubscribe from all emails checkbox input. | "Or check here to never receive any emails:" | 
+| unsubscribe_all_unsubbed_text | String | Populates text within a</p>
+
+<p>&lt;</p>
+
+<p>p> that renders, if a contact is currently unsubscribed from all emails. | "You are presently unsubscribed from all of our emails. Would you like to receive our emails again?" | 
+| unsubscribe_all_option | String | Sets the text next to the unsubscribe from all emails checkbox input. | "Unsubscribe me from all mailing lists." | 
+| button_text | String | Sets the text of the submit button that updates subscription preferences. | "Update email preferences"  | 
+| resubscribe_button_text | String | Sets the text of the submit button for when contacts are resubscribing. | "Yes, resubscribe me!" |</p>
+
+    </div>
+</body>
+</html>

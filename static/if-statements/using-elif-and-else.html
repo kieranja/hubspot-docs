@@ -1,0 +1,74 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Using elif and else</h1>
+
+<p><code>if</code> statements can be made more sophisticated with additional conditional statements or with a rule that executes when the condition or conditions are false. <code>elif</code> statements allow you to add additional conditions to your logic that will be evaluated after the previous condition. <strong><code>else</code></strong> statements define a rule that executes when all other conditions are false. You can have an unlimited number of <code>elif</code> statements within a single if statement, but only one <code>else</code> statement.</p>
+
+<p>Below is the basic syntax example of if statement that uses the <a href="/docs/hubl/operators-and-expression-tests#comparison">&lt;= operator</a> to check the value of a variable. In this example, the template would print: "Variable named number is less than or equal to 6."</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set number = 5 %}
+
+{% if number &lt;= 2 %}
+    Variable named number is less than or equal to 2.
+{% elif number &lt;= 4 %}
+    Variable named number is less than or equal to 4.
+{% elif number &lt;= 6 %}
+    Variable named number is less than or equal to 6.
+{% else %}
+    Variable named number is greater than 6.
+{% endif %}
+</code></pre>
+
+<p>Below is one more example that uses a choice module to render different headings for a careers page, based on the department chosen by the user. The example uses the <a href="/docs/hubl/operators-and-expression-tests#comparison">== operator</a>, to check for certain predefined values in the choice module.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% choice "department" label='Choose department', value='Marketing', choices='Marketing, Sales, Dev, Services' export_to_template_context=True %}
+
+{% if widget_data.department.value == 'Marketing' %}
+
+&lt;h3&gt;Want to join our amazing Marketing team?!&lt;/h3&gt;
+&lt;h4&gt;We have exciting career opportunities on the {{ widget_data.department.value }} team.&lt;/h4&gt;
+
+{% elif widget_data.department.value == 'Sales' %}
+
+&lt;h3&gt;Are you a Sales superstar?&lt;/h3&gt;
+&lt;h4&gt;We have exciting career opportunities on the {{ widget_data.department.value }} team.&lt;/h4&gt;        
+
+{% elif widget_data.department.value == 'Dev' %}
+
+&lt;h3&gt;Do you love to ship code?&lt;/h3&gt;
+&lt;h4&gt;We have exciting career opportunities on the {{ widget_data.department.value }} team.&lt;/h4&gt;
+
+{% else %}
+
+&lt;h3&gt;Want to work with our awesome customers?&lt;/h3&gt;
+&lt;h4&gt;We have exciting career opportunities on the {{ widget_data.department.value }} team.&lt;/h4&gt;
+
+{% endif %}
+</code></pre>
+
+    </div>
+</body>
+</html>

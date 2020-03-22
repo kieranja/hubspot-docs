@@ -1,0 +1,74 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>topic_cluster_by_content_id</h1>
+
+<p>Returns a HubL dict representing the topic cluster associated with a piece of content (determined by the passed content id), including metadata about the associated pillar page, core topic, and subtopics. Can be used to "auto-link" a piece of content with its associated pillar page &#91;if it exists&#93;.</p>
+
+<p>Available metadata can be found in: attachableContent (the current content's metadata), topic (the current content's associated topic metadata), coreTopic (the associated cluster's core topic metadata), and pillarPage (the associated pillar page's metadata).</p>
+
+<p>Use <code>{{ topicCluster|pprint }}</code> to see a full a display of available properties/attributes.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ topic_cluster_by_content_id(content.id) }}
+{%- if content.id -%}
+  {%- set topicCluster = topic_cluster_by_content_id(content.id) -%}
+  {%- if topicCluster.pillarPage.url.value and topicCluster.pillarPage.publishState == 'PUBLISHED' -%}
+    &lt;div&gt;Topic: &lt;a href="{{ topicCluster.pillarPage.url.value }}"&gt;{{ topicCluster.coreTopic.phrase }}&lt;/a&gt;&lt;/div&gt; 
+  {%- endif -%}
+{%- endif -%}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">{ attachedContent, topic, coreTopic, pillarPage }
+(AttachedContentWithContext:  {attachedContent=AttachedContent{id=1234,    topicId=1234,    clusterId=1234,    portalId=0,    attachable=Attachable{contentId=124,    url=ValidatedUri{https://www.hubspot.com/},  attachableType=LANDING_PAGE,  title=title,  publishState=PUBLISHED,  deletedAt=null},  isLinkedToPillarPage=null,  isPillarPage=null,  createdAt=1547238986475,  updatedAt=1547238986475,  deletedAt=null},  coreTopic=Optional[Topic{id=1234,    portalId=0,    clusterId=1234,    phrase=TOPIC PHRASE,    attachedContent=null,    isCoreTopic=false,    createdAt=1547157062081,    updatedAt=1547232313421,    deletedAt=null}],  pillarPage=Optional[AttachedContent{id=1234,    topicId=1234,    clusterId=1234,    portalId=0,    attachable=Attachable{contentId=null,    url=ValidatedUri{https://www.hubspot.com.com/},  attachableType=EXTERNAL_URL,  title=null,  publishState=PUBLISHED,  deletedAt=null},  isLinkedToPillarPage=null,  isPillarPage=null,  createdAt=1547157062086,  updatedAt=1547157062086,  deletedAt=null}],  topic=Optional[Topic{id=1234,    portalId=0,    clusterId=8345,    phrase=topic phrase,    attachedContent=null,    isCoreTopic=false,    createdAt=1547238962703,    updatedAt=1547238962703,    deletedAt=null}]})
+
+
+
+&lt;div&gt;
+  Topic: &lt;a href="#-link-to-pillar-page-url"&gt;
+    core topic phrase
+  &lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>content_id</td>
+  <td>Id</td>
+  <td>The id of the page to look up.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

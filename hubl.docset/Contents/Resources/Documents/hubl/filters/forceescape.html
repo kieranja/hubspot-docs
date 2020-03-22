@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>forceescape</h1>
+
+<p>Strictly enforce HTML escaping. In HubSpot's environment there isn't really a use case for double escaping, so this is generally behaves the same as the escape filter.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set escape_string = "&lt;div&gt;This markup is printed as text&lt;/div&gt;" %} 
+{{ escape_string|forceescape }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;div&gt;This markup is printed as text&lt;/div&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

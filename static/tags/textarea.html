@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Textarea</h1>
+
+<p>A textarea is similar to a text module in that it allows users to enter plain text, but it gives them a larger area to work in the content editor. This module does not support HTML. If you want to use directly within a predefined wrapping tag, add the <strong>no&#95;wrapper=true</strong> parameter.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% textarea "my_textarea" %}
+{% textarea "my_textarea" label='Enter plain text block', value='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a urna quis lacus vehicula rutrum.', no_wrapper=True %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a urna quis lacus vehicula rutrum.
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>value</td>
+  <td>String</td>
+  <td>Sets the default text of the textarea.</td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>       | 
+</code></pre>
+
+    </div>
+</body>
+</html>

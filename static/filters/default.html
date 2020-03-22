@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>default</h1>
+
+<p>If the value is undefined it will return the first parameter, otherwise the value of the variable will be printed. If you want to use default with variables that evaluate to false, you have to set the second parameter to <strong>true</strong>. The first example below would print the message if the variable is not defined. The second example applied the filter to an empty string, which is not undefined, but it prints a message due to the second parameter.
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>default_variable <code>Required</code></td>
+  <td>Value to return if the variable is undefined. If the variable is defined, the value of the variable will be returned instead.</td>
+</tr>
+<tr>
+  <td>boolean <code>Optional</code></td>
+  <td>Returns the default_value if the variable is an empty string</td>
+</tr>
+</tbody>
+</table></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ my_variable|default('my_variable is not defined') }} 
+{{ ''|default('the string was empty', true) }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">my_variable is not defined
+the string was empty
+</code></pre>
+
+    </div>
+</body>
+</html>

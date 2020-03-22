@@ -1,0 +1,2 @@
+# 
+In order to expand the logic and functionality of your templates, HubL supports several key operators and expression tests. The [operators](https://designers.hubspot.com/docs/hubl/operators-and-expression-tests#operators) allow you to execute math functions, make comparisons, complicate template logic, and alter what markup renders. In addition, this article contains a comprehensive list of [expression tests](https://designers.hubspot.com/docs/hubl/operators-and-expression-tests#expression-tests) that can be used in HubL.

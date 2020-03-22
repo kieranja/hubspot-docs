@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Nested loops</h1>
+
+<p>Loops can also be nested with loops. The child for loop will run with each iteration of the parent for loop. In the example below, a list of child items is printed in a nested <code>within a</code> of parent items.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set parents = ['Parent item 1', 'Parent item 2', 'Parent item 3'] %}
+{% set children = ['Child item 1', 'Child item 2', 'Child item 3'] %}
+&lt;ul&gt;
+{% for parent in parents %}
+&lt;li&gt;{{parent}}&lt;ul&gt;
+    {% for child in children %}
+    &lt;li&gt;{{child}}&lt;/li&gt;
+    {% endfor %}
+    &lt;/ul&gt;
+&lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;ul&gt;
+&lt;li&gt;Parent item 1&lt;ul&gt;
+    &lt;li&gt;Child item 1&lt;/li&gt;
+    &lt;li&gt;Child item 2&lt;/li&gt;
+    &lt;li&gt;Child item 3&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;Parent item 2&lt;ul&gt;
+    &lt;li&gt;Child item 1&lt;/li&gt;
+    &lt;li&gt;Child item 2&lt;/li&gt;
+    &lt;li&gt;Child item 3&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;Parent item 3&lt;ul&gt;
+    &lt;li&gt;Child item 1&lt;/li&gt;
+    &lt;li&gt;Child item 2&lt;/li&gt;
+    &lt;li&gt;Child item 3&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

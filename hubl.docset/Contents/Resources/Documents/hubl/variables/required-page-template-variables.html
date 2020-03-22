@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Required page template variables</h1>
+
+<p>To publish a coded file as an editable page or blog template, the following variables must be included. If you want to publish an HTML file without these variables, to use within another template, you can do so by unchecking the option "Make this template available for new content".
+<table>
+<thead>
+<tr>
+  <th>Variable</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>standard_footer_includes</td>
+  <td>String</td>
+  <td>Renders the HubSpot tracking code and any other code included in your Footer HTML in Content Settings or the options of a particular page. This tag should be inserted directly before the closing body tag.</td>
+</tr>
+<tr>
+  <td>standard_header_includes</td>
+  <td>String</td>
+  <td>Adds jQuery, public_common.css, layout.css, any attached stylesheets, a meta viewport tag, Google Analytics tracking code, other page meta information, and code added to the head tag at the domain/template/page level. This variable should be added to the <head> of HTML templates.</td>
+</tr>
+</tbody>
+</table></p>
+
+    </div>
+</body>
+</html>

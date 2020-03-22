@@ -1,0 +1,71 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>content_by_ids</h1>
+
+<p>Given a list of content IDs, returns a dict of landing page, website page or blog posts matching those IDs.</p>
+
+<p>This function takes one parameter, a list of page or blog post IDs to look up, placed within an array. Up to 100 content objects can be passed. The below example code shows this function in use to generate a list of hyperlinked list items.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set contents = content_by_ids([4715624297, 4712623297, 5215624284]) %}
+&lt;ul&gt;
+{% for content in contents %}
+    &lt;li&gt;
+        &lt;a href="{{ content.absolute_url }}"&gt;{{content.title}}&lt;/a&gt;
+    &lt;/li&gt;
+    {% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;ul&gt;
+    &lt;li&gt;
+        &lt;a href="http://www.hubspot.com/blog/articles/kcs_article/email/how-do-i-create-default-values-for-my-email-personalization-tokens"&gt;How do I create default values for my email or smart content personalization tokens?&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href="https://blog.hubspot.com/marketing/content-marketing-strategy-guide"&gt;Content Marketing Strategy: A Comprehensive Guide for Modern Marketers&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>ids</td>
+  <td>List</td>
+  <td>A list of page or blog post ids to look up. Up to 100 content objects can be passed.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

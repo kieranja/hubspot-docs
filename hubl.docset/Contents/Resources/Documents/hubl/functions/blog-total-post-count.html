@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>blog_total_post_count</h1>
+
+<p>This function returns the total number of published posts in the specified blog. If no parameter is specified, it will count your default blog posts. Alternatively, you can specify <code>'default'</code> or a blog ID of a different blog to count. The blog ID is available in the URL of your blog dashboard for a particular blog.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ blog_total_post_count }} 
+{{ blog_total_post_count(359485112) }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">16
+54
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>selected_blog</td>
+  <td>Blog id or 'default'</td>
+  <td>Specifies which blog to count.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

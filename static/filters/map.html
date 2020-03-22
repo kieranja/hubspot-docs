@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>map</h1>
+
+<p>Applies a filter on a sequence of objects or looks up an attribute. This is useful when dealing with lists of objects but you are really only interested in a certain value of it.</p>
+
+<p>The basic usage is mapping on an attribute. For example, if you want to use conditional logic to check if a value is present in a particular attribute of a dict. Alternatively, you can let it invoke a filter by passing the name of the filter and the arguments afterwards.
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>attribute</td>
+  <td>Attribute to return in the sequence of objects.</td>
+</tr>
+<tr>
+  <td>filter</td>
+  <td>Filter to apply to the sequence of objects.</td>
+</tr>
+</tbody>
+</table></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set seq = ['item1', 'item2', 'item3'] %}
+{{ seq|map('upper') }}
+{{ content|map('currentState')}}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">[ITEM1, ITEM2, ITEM3]
+DRAFT
+</code></pre>
+
+    </div>
+</body>
+</html>

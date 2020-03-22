@@ -1,0 +1,90 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Email backup unsubscribe</h1>
+
+<p>The backup unsubscribe module renders for email recipients, if HubSpot is unable to determine their email address, when that recipient tries to unsubscribe. This module renders a form for the contact to enter his or her email address to unsubscribe from email communications. It should be used on an <a href="https://knowledge.hubspot.com/cos-general/use-system-templates-to-customize-error-subscription-and-password-prompt-pages">Unsubscribe Backup system template.</a></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% email_simple_subscription "email_simple_subscription" %}
+{% email_simple_subscription "email_simple_subscription" header='Email Unsubscribe', input_help_text='Your email address:', input_placeholder='email@example.com', button_text='Unsubscribe', label='Backup Unsubscribe' %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_simple_subscription" data-hs-cos-general-type="widget" data-hs-cos-type="email_simple_subscription" id="hs_cos_wrapper_email_simple_subscription" style=""&gt;&lt;/span&gt;
+&lt;div class="page-header"&gt;
+    &lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_simple_subscription" data-hs-cos-general-type="widget" data-hs-cos-type="email_simple_subscription" id="hs_cos_wrapper_email_simple_subscription" style=""&gt;&lt;/span&gt;
+    &lt;h1&gt;&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_simple_subscription" data-hs-cos-general-type="widget" data-hs-cos-type="email_simple_subscription" id="hs_cos_wrapper_email_simple_subscription" style=""&gt;Email Unsubscribe&lt;/span&gt;&lt;/h1&gt;&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_simple_subscription" data-hs-cos-general-type="widget" data-hs-cos-type="email_simple_subscription" id="hs_cos_wrapper_email_simple_subscription" style=""&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;form id="email-prefs-form" method="post" name="email-prefs-form" style="position: relative"&gt;
+    &lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_simple_subscription" data-hs-cos-general-type="widget" data-hs-cos-type="email_simple_subscription" id="hs_cos_wrapper_email_simple_subscription" style=""&gt;&lt;/span&gt;
+    &lt;div id="content"&gt;
+        &lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_simple_subscription" data-hs-cos-general-type="widget" data-hs-cos-type="email_simple_subscription" id="hs_cos_wrapper_email_simple_subscription" style=""&gt;&lt;/span&gt;
+        &lt;h3 style="font-weight: normal"&gt;&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_simple_subscription" data-hs-cos-general-type="widget" data-hs-cos-type="email_simple_subscription" id="hs_cos_wrapper_email_simple_subscription" style=""&gt;Your email address:&lt;/span&gt;&lt;/h3&gt;
+        &lt;div style="padding-bottom: 10px"&gt;
+            &lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_simple_subscription" data-hs-cos-general-type="widget" data-hs-cos-type="email_simple_subscription" id="hs_cos_wrapper_email_simple_subscription" style=""&gt;&lt;input class="email-edit hs-input" name="email" placeholder="email@example.com" style="padding: 6px; font-size: 15px; width: 507px; margin-left: 0px" type="email" value=""&gt;&lt;/span&gt;
+        &lt;/div&gt;&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_simple_subscription" data-hs-cos-general-type="widget" data-hs-cos-type="email_simple_subscription" id="hs_cos_wrapper_email_simple_subscription" style=""&gt;&lt;input class="hs-button primary" id="submitbutton" type="submit" value="Unsubscribe"&gt;&lt;/span&gt;
+    &lt;/div&gt;&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_simple_subscription" data-hs-cos-general-type="widget" data-hs-cos-type="email_simple_subscription" id="hs_cos_wrapper_email_simple_subscription" style=""&gt;&lt;/span&gt;
+&lt;/form&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>header</td>
+  <td>String</td>
+  <td>Renders text in an h1 tag above the unsubscribe form.</td>
+  <td>"Email Unsubscribe"</td>
+</tr>
+<tr>
+  <td>input_help_text</td>
+  <td>String</td>
+  <td>Renders help text in an h3 tag above your email unsubscribe form field.</td>
+  <td>"Your email address:"</td>
+</tr>
+<tr>
+  <td>input_placeholder</td>
+  <td>String</td>
+  <td>Adds placeholder text within the email address form field.</td>
+  <td>"email@example.com"</td>
+</tr>
+<tr>
+  <td>button_text</td>
+  <td>String</td>
+  <td>Changes the text of the unsubscribe form submit button.</td>
+  <td>"Unsubscribe"</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Variables within loops</h1>
+
+<p>You can call variables that are defined outside of a loop, from within a loop, but not the other way around.</p>
+
+<p>You can also use functions in order to mutate objects for settings values on dict's or performing list operations. The following example is using the <a href="/docs/hubl/functions#update"><code>.update</code> list operation</a>:</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set obj = {val : 0} %}
+{% for i in range(0, 10) %}
+  {% do obj.update('val', obj.val + i) %}
+{% endfor %}
+{{ obj.val }}
+</code></pre>
+
+    </div>
+</body>
+</html>

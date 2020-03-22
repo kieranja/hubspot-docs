@@ -1,0 +1,75 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>geo_distance</h1>
+
+<p>This function contains 4 parameters and calculates the ellipsoidal 2D distance between two points on Earth.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% for row in hubdb_table_rows(1234567, "geo_distance(loc,1.233,-5.678,mi)__gt=500") %}
+    {{row.name}} &lt;br&gt; 
+{% endfor %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">Cambridge, MA&lt;br&gt;
+Salem, MA&lt;br&gt;
+San Diego, CA&lt;br&gt;
+Chicago, IL&lt;br&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>point1</td>
+  <td>Location</td>
+  <td>location from a HubDB column.</td>
+</tr>
+<tr>
+  <td>point2_lat</td>
+  <td>Latitude</td>
+  <td>Latitude of point2.</td>
+</tr>
+<tr>
+  <td>point2_long</td>
+  <td>Longitude</td>
+  <td>Longitude of point2.</td>
+</tr>
+<tr>
+  <td>units</td>
+  <td>String</td>
+  <td>Units for the return value. Options are FT for feet, MI for miles, M for meters or KM for kilometers.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

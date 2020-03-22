@@ -1,0 +1,132 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Blog related posts</h1>
+
+<p>Adds a listing of blog posts based off of a set of parameters shared by posts across blogs. Posts are selected based off of their relevancy to the set parameters. For an example usage of the optional post&#95;formatter parameter, see <a href="/tutorials/creating-a-related-post-listing">Creating a related blog post listing with the blog related posts HubL tag.</a></p>
+
+<p>Please note this tag does not generate a page/post level editable module, it is entirely configured with HubL.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% related_blog_posts %}
+{% related_blog_posts limit=2, blog_ids="1,2", tags="Sales enablement,Marketing", blog_authors="John Smith,Frank Smith", path_prefixes="/business-blog", start_date="2018-04-10", end_date="2018-04-10", blog_post_override="2783035366" %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_related_blog_posts" data-hs-cos-general-type="widget" data-hs-cos-type="related_blog_posts" id="hs_cos_wrapper_" style=""&gt;&lt;!--related-blog-entries--&gt;&lt;/span&gt;
+&lt;div class="hs-related-blog-module feedreader_box"&gt;
+  &lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_related_blog_posts" data-hs-cos-general-type="widget" data-hs-cos-type="related_blog_posts" id="hs_cos_wrapper_" style=""&gt;&lt;/span&gt;
+  &lt;div class="hs-related-blog-item"&gt;
+    &lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_related_blog_posts" data-hs-cos-general-type="widget" data-hs-cos-type="related_blog_posts" id="hs_cos_wrapper_" style=""&gt;&lt;/span&gt;
+    &lt;div class="hs-related-blog-item-text"&gt;
+      &lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_related_blog_posts" data-hs-cos-general-type="widget" data-hs-cos-type="related_blog_posts" id="hs_cos_wrapper_" style=""&gt;&lt;a class="hs-related-blog-title" href="//www.underseaband.com/business-blog/marketing-is-fun"&gt;&lt;span&gt;Marketing is fun&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;
+      &lt;div class="hs-related-blog-byline"&gt;by &lt;span class="hs-related-blog-author"&gt;John Smith&lt;/span&gt; &lt;span class="hs-related-blog-posted-at"&gt;posted on&lt;/span&gt; &lt;span class="hs-related-blog-date"&gt;June 3, 2018&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="hs-related-blog-byline"&gt;
+        &lt;p class="hs-related-blog-description"&gt;Learn how to make marketing fun!&lt;a href="//www.underseaband.com/business-blog/marketing-is-fun"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="hs-related-blog-byline"&gt;
+        &lt;span class="hs-related-blog-tags"&gt;Tags: Marketing&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="hs-related-blog-item hs-with-featured-image"&gt;
+    &lt;div class="hs-related-blog-item-text"&gt;
+      &lt;a class="hs-related-blog-title" href="//www.underseaband.com/business-blog/sales-is-fun"&gt;&lt;span&gt;Sales is fun&lt;/span&gt;&lt;/a&gt;
+      &lt;div class="hs-related-blog-byline"&gt;by &lt;span class="hs-related-blog-author"&gt;Frank Smith&lt;/span&gt; &lt;span class="hs-related-blog-posted-at"&gt;posted on&lt;/span&gt; &lt;span class="hs-related-blog-date"&gt;June 7, 2018&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="hs-related-blog-byline"&gt;
+        &lt;p class="hs-related-blog-description"&gt;Learn how to make sales fun!&lt;a href="//www.underseaband.com/business-blog/sales-is-fun"&gt;Read more&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="hs-related-blog-byline"&gt;
+        &lt;span class="hs-related-blog-tags"&gt;Tags: Sales enablement&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="hs-related-blog-item-image-wrapper"&gt;&lt;img alt="" class="hs-related-blog-featured-image" src="//www.underseaband.com/hubfs/business-blog/sales-is-fun.jpg"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>blog_ids</td>
+  <td>Integer</td>
+  <td>The ID(s) of blog(s) to include posts from. Omit this parameter to use the default blog.</td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| blog_post_ids | String | The ID(s) of a blog posts to use when finding relevant blog posts to list (comma separated). This parameter should only be used when the widget is appearing on pages, as on blog posts, it will default to the post the widget is appearing on. |</p>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| blog_post_override | String | The ID(s) of a blog posts which should always show up in the returned listing, despite all other parameter values and filters (comma separated). |</p>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| limit | Integer |  The max number of blog posts to list. | 3 | 
+| tags | String | The tag(s) that should be used to determine if a post is relevant (comma separated). If a blog post has one of these tags or a similar tag, the post’s relevancy is increased, improving its ranking in the listing. |</p>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| start_date | datetime | Earliest published date. |</p>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| end_date | datetime | Latest published date. |</p>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| blog_authors | String |  The name(s) of authors to include posts from (comma separated). |</p>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| path_prefixes | String | URL paths or subdirectories to include posts from (comma separated). If a blog post has a similar prefix in its path, the post’s relevancy is increased, improving its ranking in the listing. |</p>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| post_formatter | String | The name of a custom macro to render returned blog posts. The macro is passed three parameters which are the blogs blog post object to format, the count in the iteration of blog posts, and the total count of blog posts in the results. If not specified or set to “default”, the built-in formatter will be used to format each post. | default |</p>
+
+    </div>
+</body>
+</html>

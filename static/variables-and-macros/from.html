@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>From</h1>
+
+<p>If you want to only import specific macros, instead of all macros contained in a separate .html file, you can use the <strong>from</strong> tag. With the from tag, specify only the macros that you want to import. Generally, using <strong>import</strong> will provide more flexibility, but this alternative is also supported.</p>
+
+<p>The example below accesses the same <code>my_macros.html</code> file from the previous section of this article. But this time instead of importing all macros, it accesses only the footer macro.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% from 'custom/page/web_page_basic/my_macros.html' import footer %}
+{{ footer('h2', 'My footer info') }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;footer&gt;&lt;h2&gt;My footer info&lt;/h2&gt;&lt;/footer&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Inline if statements</h1>
+
+<p>HubL supports inline <code>if</code> statements. These can be used to write conditional logic in a concise manner with <a href="/docs/hubl/operators-and-expression-tests">operators and expression tests</a>.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set color = "Blue" if is_blue is truthy else "Red" %}     // color == "blue"  
+
+{{ "Blue" if is_blue is truthy else "Red" }}     // "Blue"
+
+{% set dl = true %}
+&lt;a href="http://example.com/some.pdf" {{"download" if dl }} &gt;Download PDF&lt;/a&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Video Player</h1>
+
+<p>Render a Vidyard video player for a File Manager video which is selected "Allow embedding, sharing, and tracking".</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% video_player "embed_player" %}
+{% video_player "embed_player" overrideable=False, type='scriptV4', hide_playlist=True, viral_sharing=False, embed_button=False, width='600', height='375', player_id='6178121750', style='', conversion_asset='{"type":"FORM","id":"9a77c63f-bee6-4ff8-9202-b0af020ea4b2","position":"POST"}' %}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>hide_playlist</td>
+  <td>Boolean</td>
+  <td>Hide the video playlist.</td>
+  <td>True</td>
+</tr>
+<tr>
+  <td>playlist_color</td>
+  <td>String</td>
+  <td>A HEX color value for the playlist.</td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| play_button_color | String | A HEX color value for the play and pause buttons. | #2A2A2A | 
+| embed_button | Boolean | Display embed button on the player | False | 
+| viral_sharing | Boolean | Display the social networks sharing button on the player. | False | 
+| width | Number | Width of the embedded video player. | Auto | 
+| height | Number | Height of the embedded video player. | Auto | 
+| player_id | Number | The player_id of the video to embed. Returned at GET /filemanager/api/v2/files/:file_id in the meta.video_data.hosting_infos dict. |</p>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| style | String | Additional style for player. |</p>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| conversion_asset | JSON | Event setting for player. Can render CTA or Form before or after video plays. This parameter takes a JSON object with three parameters: type (FORM or CTA), id (The guid of the type object), position (POST or PRE). | See above example |</p>
+
+    </div>
+</body>
+</html>

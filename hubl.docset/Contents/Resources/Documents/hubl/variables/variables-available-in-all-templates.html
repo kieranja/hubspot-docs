@@ -1,0 +1,202 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Variables available in all templates</h1>
+
+<p>Many predefined HubSpot variables can be used in email, page, or blog templates. Below is a list of these variables.</p>
+
+<p><em>(Note: If you want to see additional information what these variables can output, <a href="/docs/hubl/filters#pprint">try using the pprint parameter</a>)</em>
+The following variables will render on any type of content.
+<table>
+<thead>
+<tr>
+  <th>Variable</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>account</td>
+  <td>Dict</td>
+  <td>This variable is a dictionary that stores company personalization properties for a known contact. Properties can be accessed from this dict, by adding a period and the property name. For example, account.name would print the company name of a contact.Use of this variable will disable page caching. </td>
+</tr>
+<tr>
+  <td>company_domain</td>
+  <td>String</td>
+  <td>Prints the company domain from Website > Pages > Branding > Logo Link.</td>
+</tr>
+<tr>
+  <td>contact</td>
+  <td>Dict</td>
+  <td>This variable is a dictionary that stores contact personalization properties for a known contact. Properties can be accessed from this dict, by adding a period and the property name. For example, contact.firstname would print the first name of a contact.Use of this variable will disable page caching. </td>
+</tr>
+<tr>
+  <td>content</td>
+  <td>Dict</td>
+  <td>This variable is a dictionary that stores various properties pertaining to a specific piece of content such as an email, a page, or a post.</td>
+</tr>
+<tr>
+  <td>content.absolute_url</td>
+  <td>String</td>
+  <td>Prints the full URL of a page, post, or web page version of an email.</td>
+</tr>
+<tr>
+  <td>content.archived</td>
+  <td>Boolean</td>
+  <td>This variable evaluates to True, if the page or email was marked as archived by the user.</td>
+</tr>
+<tr>
+  <td>content.author_email</td>
+  <td>String</td>
+  <td>The email address of the content creator.</td>
+</tr>
+<tr>
+  <td>content.author_name</td>
+  <td>String</td>
+  <td>The first and last name of the content creator.</td>
+</tr>
+<tr>
+  <td>content.author_username</td>
+  <td>String</td>
+  <td>The HubSpot username of the content creator.</td>
+</tr>
+<tr>
+  <td>content.campaign</td>
+  <td>String</td>
+  <td>The GUID for the marketing campaign that this page or email is associated with. This unique ID can be found in the URL of a particular campaign in the Campaign's tool.</td>
+</tr>
+<tr>
+  <td>content.campaign_name</td>
+  <td>String</td>
+  <td>The name of the marketing campaign that this page, this post, or this email is associated with.</td>
+</tr>
+<tr>
+  <td>content.created</td>
+  <td>Datetime</td>
+  <td>A datetime object for when the content was originally created, in UTC time. This variable can be formatted with the datetime filter.</td>
+</tr>
+<tr>
+  <td>content.meta_description</td>
+  <td>String</td>
+  <td>When pulling the meta description of a page, it is better to use the variable page_meta.meta_description.</td>
+</tr>
+<tr>
+  <td>content.name</td>
+  <td>String</td>
+  <td>The name of a post, email, or page. For pages and emails this will print the internal content name, while for posts this will print the post title. For blog posts, this is the post title that displays. For other types of content, this is generally an internal name. This variable includes a wrapper so that it is editable via the UI, when included in blog posts. If you want to print the content name without a wrapper, use page_meta.name.</td>
+</tr>
+<tr>
+  <td>content.publish_date</td>
+  <td>Datetime</td>
+  <td>A datetime object representing when the content was published, in UTC time. This variable can be formatted with the datetime filter.</td>
+</tr>
+<tr>
+  <td>content.publish_date_localized</td>
+  <td>String</td>
+  <td>A string representing the datetime when the content was published, in the local time as defined in the HubSpot Report settings. This variable is also subject to the language and  date format settings in Settings > Website > Blog > Date Formats.</td>
+</tr>
+<tr>
+  <td>content.template_path</td>
+  <td>String</td>
+  <td>The Design Manager file path to your template (ie custom/page/web_page_basic/my_template.html).</td>
+</tr>
+<tr>
+  <td>content.updated</td>
+  <td>Datetime</td>
+  <td>A datetime object for when the user last updated the content, in UTC time. This variable can be formatted with the datetime filter.</td>
+</tr>
+<tr>
+  <td>content_id</td>
+  <td>String</td>
+  <td>Prints the unique ID for a page, post, or email. This ID can be found in the URL of the editor. You can use this variable as an alias for content.id.</td>
+</tr>
+<tr>
+  <td>favicon_link</td>
+  <td>String</td>
+  <td>Prints the source URL of the favicon. This image is set in Settings > Website > Pages > Branding.</td>
+</tr>
+<tr>
+  <td>hub_id</td>
+  <td>String</td>
+  <td>The portal ID of your HubSpot account.</td>
+</tr>
+<tr>
+  <td>hubspot_analytics_tracking_code</td>
+  <td>String</td>
+  <td>Includes the analytics tracking code. This tag is not necessary, because standard_footer_includes, already renders the tracking code.</td>
+</tr>
+<tr>
+  <td>local_dt</td>
+  <td>Datetime</td>
+  <td>A datetime object of the current time in the time zone defined in your Report Settings.</td>
+</tr>
+<tr>
+  <td>local_time_zone</td>
+  <td>String</td>
+  <td>The time zone, as configured in your HubSpot Report Settings.</td>
+</tr>
+<tr>
+  <td>page_meta.canonical_url</td>
+  <td>String</td>
+  <td>The official URL that this page should be accessed at. Usually does not include any query string parameters. Use this for the rel='canonical' tag. HubSpot automatically canonicalizes URLs.</td>
+</tr>
+<tr>
+  <td>page_meta.html_title</td>
+  <td>String</td>
+  <td>The title of the page. This variable should be used in the <title> tag of HTML templates.  </td>
+</tr>
+<tr>
+  <td>page_meta.meta_description</td>
+  <td>String</td>
+  <td>The meta description of a page. This variable should be used in the "description" <meta> tag of HTML templates.</td>
+</tr>
+<tr>
+  <td>page_meta.name</td>
+  <td>String</td>
+  <td>An alias for content.name.</td>
+</tr>
+<tr>
+  <td>portal_id</td>
+  <td>String</td>
+  <td>An alias for hub_id</td>
+</tr>
+<tr>
+  <td>request_contact</td>
+  <td>Dict</td>
+  <td>A dictionary containing data about the requested contact.Use of this variable will disable page caching. </td>
+</tr>
+<tr>
+  <td>site_settings</td>
+  <td>Dict</td>
+  <td>The site_settings dict contains various settings from such as colors and fonts (see below).</td>
+</tr>
+<tr>
+  <td>year</td>
+  <td>String</td>
+  <td>Prints the current year.</td>
+</tr>
+</tbody>
+</table></p>
+
+    </div>
+</body>
+</html>

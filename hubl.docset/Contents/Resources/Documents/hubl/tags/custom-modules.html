@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Custom modules</h1>
+
+<p>Custom Modules allow HubSpot designers to create a custom group of editable content objects to be used across templates and pages on HubSpot’s CMS, while still allowing marketers to control the specific content appearing within those modules on a page-by-page basis. You can learn more about <a href="/docs/building-blocks/modules">custom modules and their simplified HubL syntax, here</a>.</p>
+
+<p>Custom modules must be built in the Custom Module editor, but they can be included into coded templates and HubL modules. You will see a 'Usage Snippet' in the right sidebar of the Custom Module editor under 'Template Usage'.</p>
+
+<p>Custom modules require the ID of the module as a string as well as a path parameter in order to specify which module to load. The usage snippet will also include a label parameter. See the syntax below:</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% module "module_15677217712485" path="/Custom/Test custom module"  %}
+{% module "module_25642219712432" path="/Assets/Custom calendar module" label="Custom calendar module" %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;div id="hs_cos_wrapper_module_15677217712485" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"&gt;content!&lt;/div&gt;
+&lt;style&gt;
+    @import "//cdn2.hubspotqa.com/qa/hub/126/file-613025667-css/custom_widget_example.css"
+&lt;/style&gt;
+&lt;div&gt;
+    &lt;img class="persons-photo" src="//cdn2.hubspotqa.com/qa/hub/124/file-1360297556-jpeg/dharmesh.jpeg"
+        alt="dharmesh.jpeg"&gt;
+    &lt;div&gt;
+        &lt;img class="company-logo with-background"
+            src="//cdn2.hubspotqa.com/qa/hub/124/file-221882251-png/HubSpot_Logo_2x.png" width="60px" height="inherit"
+            alt="HubSpot_Logo_2x.png"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;p class="quote"&gt;
+        &lt;span class="quotation-mark"&gt;&lt;b&gt;" &lt;/b&gt;&lt;/span&gt;The Content Optimization System matches content with context to
+        create a highly personalized, relevant and meaningful customer experience.
+        &lt;span class="quotation-mark"&gt;&lt;b&gt;" &lt;/b&gt;&lt;/span&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="name-and-company"&gt;
+    &lt;span&gt;&lt;b&gt;Dharmesh Shah,&lt;/b&gt;&lt;/span&gt;
+    &lt;span&gt;HubSpot&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>module_id</td>
+  <td>String</td>
+  <td>The id of the module to render.</td>
+</tr>
+<tr>
+  <td>path</td>
+  <td>String</td>
+  <td>The path of the module to render. Include leading slash for absolute path, otherwise path is relative to template. Reference HubSpot default modules with paths corresponding to their HubL tags such as @hubspot/rich_text, @hubspot/linked_image, etc.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

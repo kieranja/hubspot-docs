@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>to_local_time</h1>
+
+<p>Converts a UNIX timestamp to the local time, based on your HubSpot Report Settings. You can then apply a datetimeformat filter to format the date.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ to_local_time(eastern_dt) }} 
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">2015-05-13 10:37:31
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>date</td>
+  <td>Datetime</td>
+  <td>UNIX timestamp to convert to local time.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

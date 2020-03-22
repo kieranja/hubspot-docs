@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>file_by_id</h1>
+
+<p>This function returns the metadata of a file by ID. It accepts a single parameter, the numeric ID of the file to look up.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set file = file_by_id(123) %} 
+{{ file.friendlyUrl }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">https://www.hubspot.com/hubfs/HubSpot_Logos/HSLogo_color.svg
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>file_id</td>
+  <td>Id</td>
+  <td>The ID of the file to look up.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

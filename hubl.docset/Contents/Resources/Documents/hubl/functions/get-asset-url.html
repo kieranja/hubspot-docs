@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>get_asset_url</h1>
+
+<p>This function returns the public URL of a specified template or code file. The parameter of this function is the path in Design Manager. Coded file URLs update each time you publish them; therefore, by using this function your ensure you are always using the latest version of the file.</p>
+
+<p>You can automatically generate this function in the app, by either right-clicking on a file name and choosing "Copy public URL" or by choosing <strong>Actions &gt; Copy public URL</strong>. The example below gets the URL of a Javascript file authored in Design Manager that can be included as the <code>src</code> of a ``.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ get_asset_url("/custom/styles/style.css") }} 
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">//cdn2.hubspot.net/hub/1234567/hub_generated/template_assets/1565970767575/custom/styles/style.min.css
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>path</td>
+  <td>String</td>
+  <td>The Design Manager file path to the template or file.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

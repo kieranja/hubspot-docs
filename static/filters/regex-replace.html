@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>regex_replace</h1>
+
+<p>Searches for a regex pattern and replaces with a sequence of characters. The first argument is a RE2-style regex pattern, the second is the replacement string.</p>
+
+<p>Information on the RE2 regex syntax can be found <a href="https://github.com/google/re2/wiki/Syntax">here</a>.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ "contact-us-2"|regex_replace("[^a-zA-Z]", "") }} 
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">contactus
+</code></pre>
+
+    </div>
+</body>
+</html>

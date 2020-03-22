@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Macros</h1>
+
+<p>HubL macros allow you to print multiple statements with a dynamic value. For example, if there is a block of code that you find yourself writing over and over again, a macro may be a good solution, because it will print the code block while swapping out certain arguments that you pass it.</p>
+
+<p>The macro is defined, named, and given arguments within a HubL statement. The macro is then called in a statement that passes its dynamic values, which prints the final code block with the dynamic arguments. The basic syntax of a macro is as follows:</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% macro name_of_macro(argument_name, argument_name2)  %}
+    {{ argument_name }}
+    {{ argument_name2 }}
+{% endmacro %}
+{{ name_of_macro('value to pass to argument 1', 'value to pass to argument 2')  }}
+</code></pre>
+
+<p>If your macro is returning whitespace in the form of new lines, you can strip whitespace in templates by hand. If you add a minus sign (<code>-</code>) to the start or end of a block, a comment, or a variable expression, the whitespaces before or after that block will be removed.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% macro name_of_macro(argument_name, argument_name2) -%}
+    {{ argument_name }}
+    {{ argument_name2 }}
+{%- endmacro %}
+</code></pre>
+
+<p>Below shows a practical application of a macro to print a CSS3 properties with the various vendor prefixes, with a dynamic value. This allows you to print 5 lines of code with a single macro tag.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% macro trans(value) %} 
+-webkit-transition: {{value}};
+-moz-transition: {{value}};
+-o-transition: {{value}};
+-ms-transition: {{value}};
+transition: {{value}};
+{% endmacro %}
+
+
+a {
+    {{ trans('all .2s ease-in-out') }}
+}
+</code></pre>
+
+    </div>
+</body>
+</html>

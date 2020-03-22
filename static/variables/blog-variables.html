@@ -1,0 +1,219 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Blog variables</h1>
+
+<p>The following variables are available for blog templates. Some variables are only available for post listings, while others may only be available for blog posts.
+<table>
+<thead>
+<tr>
+  <th>Variable</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>blog_author</td>
+  <td>String</td>
+  <td>This variable contains blog author information for blog author listing pages. It can be used to create conditional logic to render markup for blog author listings. It also contains the following properties:blog_author.avatar, blog_author.bio, blog_author.display_name, blog_author.email, blog_author.facebook, blog_author.google_plus, blog_author.has_social_profiles, blog_author.linkedin, blog_author.twitter, and blog_author.website</td>
+</tr>
+<tr>
+  <td>content.blog_post_author</td>
+  <td>String</td>
+  <td>This variable contains individual blog post author information for a given post. It contains the following properties:content.blog_post_author.avatar, content.blog_post_author.bio, content.blog_post_author.display_name, content.blog_post_author.email, content.blog_post_author.facebook, content.blog_post_author.google_plus, content.blog_post_author.has_social_profiles, content.blog_post_author.linkedin, content.blog_post_author.slug, content.blog_post_author.twitter, and content.blog_post_author.website</td>
+</tr>
+<tr>
+  <td>content.blog</td>
+  <td>String</td>
+  <td>An alias for group.</td>
+</tr>
+<tr>
+  <td>content.comment_count</td>
+  <td>Integer</td>
+  <td>The number of comments for the current blog post. </td>
+</tr>
+<tr>
+  <td>content.comment_list</td>
+  <td>String</td>
+  <td>A list of the comments for the current blog post.</td>
+</tr>
+<tr>
+  <td>current_page_num</td>
+  <td>Integer</td>
+  <td>The integer index of the current page of blog posts in the view. </td>
+</tr>
+<tr>
+  <td>content.featured_image</td>
+  <td>String</td>
+  <td>The source URL of the featured image, selected when the blog was published.</td>
+</tr>
+<tr>
+  <td>content.featured_image_alt_text</td>
+  <td>String</td>
+  <td>The alt text of the featured image.</td>
+</tr>
+<tr>
+  <td>last_page_num</td>
+  <td>Integer</td>
+  <td>The integer index of the last page of blog posts in the view.</td>
+</tr>
+<tr>
+  <td>next_page_num</td>
+  <td>Integer</td>
+  <td>The integer index of the next page of blog posts in the view.</td>
+</tr>
+<tr>
+  <td>content.next_post_featured_image</td>
+  <td>String</td>
+  <td>The URL of the featured image of the next blog post, if one exists.</td>
+</tr>
+<tr>
+  <td>content.next_post_name</td>
+  <td>String</td>
+  <td>The name of the next blog post, if one exists.</td>
+</tr>
+<tr>
+  <td>content.next_post_slug</td>
+  <td>String</td>
+  <td>The URL slug of the next blog post, if one exists.</td>
+</tr>
+<tr>
+  <td>content.post_body</td>
+  <td>String</td>
+  <td>The body of the blog post.</td>
+</tr>
+<tr>
+  <td>content.post_list_content</td>
+  <td>String</td>
+  <td>The body blog post content, modified for the listing page. The final output is affected by summary settings in Settings > Website > Blog. If featured images are enabled in settings, this variable will remove any images above the read more separator automatically.</td>
+</tr>
+<tr>
+  <td>content.post_list_summary_featured_image</td>
+  <td>String</td>
+  <td>The featured image for listing layouts. This variable is affected by the settings in Settings > Website > Blog.</td>
+</tr>
+<tr>
+  <td>content.post_summary</td>
+  <td>String</td>
+  <td>The blog post summary. This content is determined by the read more separator in the blog editor.</td>
+</tr>
+<tr>
+  <td>content.previous_post_featured_image</td>
+  <td>String</td>
+  <td>The URL of the featured image of the previous blog post, if one exists.</td>
+</tr>
+<tr>
+  <td>content.previous_post_name</td>
+  <td>String</td>
+  <td>The name of the previous blog post, if one exists.</td>
+</tr>
+<tr>
+  <td>content.previous_post_slug</td>
+  <td>String</td>
+  <td>The URL slug of the previous blog post, if one exists.</td>
+</tr>
+<tr>
+  <td>content.publish_date_localized</td>
+  <td>String</td>
+  <td>A string representing the date/time when the blog post was published, formatted according to the blog's language and date formatting settings.</td>
+</tr>
+<tr>
+  <td>content.simple_list_page</td>
+  <td>Boolean</td>
+  <td>A boolean to indicate whether the requested page is the 'all posts' page containing links to all blog posts.</td>
+</tr>
+<tr>
+  <td>contents</td>
+  <td>String</td>
+  <td>Contents is a sequence of your blog posts that are iterated through using a for loop, available on blog listing pages (is_listing_view). </td>
+</tr>
+<tr>
+  <td>contents.total_count</td>
+  <td>Integer</td>
+  <td>Total number of posts in a listing (regular, topics, authors, etc.).</td>
+</tr>
+<tr>
+  <td>contents.total_page_count</td>
+  <td>Integer</td>
+  <td>Total number of pages of posts based on your number of posts per page.</td>
+</tr>
+<tr>
+  <td>contents_topics</td>
+  <td>String</td>
+  <td>Get a list of all blog topics in the contents sequence of posts.</td>
+</tr>
+<tr>
+  <td>group</td>
+  <td>Dict</td>
+  <td>The dictionary containing variables that pertain to an entire blog.</td>
+</tr>
+<tr>
+  <td>group.absolute_url</td>
+  <td>String</td>
+  <td>The base URL of a blog.</td>
+</tr>
+<tr>
+  <td>group.allow_comments</td>
+  <td>Boolean</td>
+  <td>Evaluates to True, if comments are allowed.</td>
+</tr>
+<tr>
+  <td>group.description</td>
+  <td>String</td>
+  <td>The meta description of the blog from Settings > Website > Blog. Used for the meta description on certain listing pages.</td>
+</tr>
+<tr>
+  <td>group.header</td>
+  <td>String</td>
+  <td>The header of the blog.</td>
+</tr>
+<tr>
+  <td>group.html_title</td>
+  <td>String</td>
+  <td>The title of this blog as it should appear in the <title> tag.</td>
+</tr>
+<tr>
+  <td>group.id</td>
+  <td>String</td>
+  <td>The unique ID of a blog. This ID can be found in the URL of the Blog Dashboard for a particular blog.</td>
+</tr>
+<tr>
+  <td>group.public_title</td>
+  <td>String</td>
+  <td>The title of this blog as it should appear at the top of rendered pages.</td>
+</tr>
+<tr>
+  <td>group.slug</td>
+  <td>String</td>
+  <td>The path to this blog.</td>
+</tr>
+<tr>
+  <td>topic</td>
+  <td>Dict</td>
+  <td>The topic variable can be used to render markup for a topic listing. It also contains the properties: topic.name and topic.slug.</td>
+</tr>
+</tbody>
+</table></p>
+
+    </div>
+</body>
+</html>

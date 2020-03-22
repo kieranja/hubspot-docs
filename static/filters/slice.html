@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>slice</h1>
+
+<p>Slice an iterator and return a list of lists containing those items. The first parameter specifies how many items will be sliced, and the second parameter specifies characters to fill in empty slices.
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>slices <code>Required</code></td>
+  <td>How many items will be sliced.</td>
+</tr>
+<tr>
+  <td>filler <code>Required</code></td>
+  <td>Specifies characters to fill in empty slices. </td>
+</tr>
+</tbody>
+</table></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set items = ['laptops', 'tablets', 'smartphones', 'smart watches', 'TVs'] %}
+&lt;div class="columwrapper"&gt;
+  {% for column in items|slice(3,' ') %}
+    &lt;ul class="column-{{ loop.index }}"&gt;
+    {% for item in column %}
+      &lt;li&gt;{{ item }}&lt;/li&gt;
+    {% endfor %}
+    &lt;/ul&gt;
+  {% endfor %}
+&lt;/div&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;div class="columwrapper"&gt;
+    &lt;ul class="column-1"&gt;
+      &lt;li&gt;laptops&lt;/li&gt;
+      &lt;li&gt;tablets&lt;/li&gt;
+      &lt;li&gt;smartphones&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;ul class="column-2"&gt;
+      &lt;li&gt;smart watches&lt;/li&gt;  
+      &lt;li&gt;TVs&lt;/li&gt;
+      &lt;li&gt;&amp;nbsp;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

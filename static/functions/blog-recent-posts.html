@@ -1,0 +1,74 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>blog_recent_posts</h1>
+
+<p>The <code>blog_recent_posts</code> function returns a sequence of blog post objects for the specified blog, sorted by most recent first. This sequence of posts can be saved into a variable and iterated through with a for loop, creating a custom post listing of your most popular posts.</p>
+
+<p>The function takes two parameters. The first parameter specifies which blog to collect popular posts from. The value should be <code>'default'</code> or the blog ID of a particular blog (available in the URL of the Blog dashboard). The second parameter specifies how many posts are retrieved.</p>
+
+<p>The first line of the example below demonstrates how the function returns a sequence. The sequence is saved in a variable and looped through. <a href="/docs/hubl/variables#blog-variables">Any blog post variables</a> should use the name of the individual loop item rather than <code>content.</code>. In the example, <code>rec_post.name</code> is used. This technique can be used, not only on blog templates, but also regular pages.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ blog_recent_posts('default', 5) }}
+{% set rec_posts = blog_recent_posts('default', 5) %}
+{% for rec_post in rec_posts %}
+    &lt;div class="post-title"&gt;{{ rec_post.name }}&lt;/div&gt;
+{% endfor %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">[Recent post title 1, Recent post title 2, Recent post title 3, Recent post title 4, Recent post title 5]
+
+&lt;div class="post-title"&gt;Recent post title 1&lt;/div&gt;
+&lt;div class="post-title"&gt;Recent post title 2&lt;/div&gt;
+&lt;div class="post-title"&gt;Recent post title 3&lt;/div&gt;
+&lt;div class="post-title"&gt;Recent post title 4&lt;/div&gt;
+&lt;div class="post-title"&gt;Recent post title 5&lt;/div&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>selected_blog</td>
+  <td>Blog id or 'default'</td>
+  <td>Specifies which blog to use.</td>
+</tr>
+<tr>
+  <td>limit</td>
+  <td>Integer</td>
+  <td>Specifies the number of posts to add to the sequence, maximum 200.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

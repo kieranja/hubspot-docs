@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>blog_authors</h1>
+
+<p>The <code>blog_authors</code> function returns a sequence of blog author objects for the specified blog, sorted by slug ascending. This sequence can be stored in a variable and iterated through to create custom author post filters.</p>
+
+<p>The number of live posts by each author can be accessed with author.live&#95;posts.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ blog_authors('default', 250) }}
+
+{% set my_authors = blog_authors('default', 250) %}
+&lt;ul&gt;
+{% for author in my_authors %}
+&lt;li&gt;&lt;a href="{{ blog_author_url(group.id, author.slug) }}"&gt;{{ author }}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">[ Brian Halligan, Dharmesh Shah, Katie Burke, Kipp Bodnar]
+
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href="http://blog.hubspot.com/marketing/author/brian-halligan"&gt;Brian Halligan&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://blog.hubspot.com/marketing/author/dharmesh-shah"&gt;Dharmesh Shah&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://blog.hubspot.com/marketing/author/katie-burke"&gt;Katie Burke&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://blog.hubspot.com/marketing/author/kipp-bodnar"&gt;Kipp Bodnar&lt;/a&gt;&lt;/li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>selected_blog</td>
+  <td>Blog id or 'default'</td>
+  <td>Specifies which blog to use.</td>
+</tr>
+<tr>
+  <td>limit</td>
+  <td>Integer</td>
+  <td>Sets the limit on the number of authors fetched.</td>
+</tr>
+</tbody>
+</table>
+
+<p>The first line of the example below demonstrates how the function returns a sequence of author objects. The rest of the example demonstrates a use case of saving a sequence into a variable and then iterating though the author objects, printing a set of author listing links. The example assumes that the blog has 4 authors.</p>
+
+    </div>
+</body>
+</html>

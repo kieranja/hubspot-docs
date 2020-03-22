@@ -1,0 +1,66 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Header</h1>
+
+<p>Generates a header module that will render text as an h1-h6 tag.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% header "header"  %}
+{% header "my_header" header_tag='h1', overrideable=True, value='A clear and bold header', label='Header' %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span id="hs_cos_wrapper_my_header" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_header" style="" data-hs-cos-general-type="widget" data-hs-cos-type="header"&gt;
+    &lt;h1&gt;A clear and bold header&lt;/h1&gt;
+&lt;/span&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>header_tag</td>
+  <td>String</td>
+  <td>Select which heading tag to render. Possible values include: h1, h2, h3, h4, h5, h6.</td>
+  <td>h1</td>
+</tr>
+<tr>
+  <td>value</td>
+  <td>String</td>
+  <td>Renders default text within the heading module.</td>
+  <td>"A clear bold header"</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Choice</h1>
+
+<p>A choice module creates a dropdown in the content editor UI that prints the value selected by the user. Choice modules are great for giving your users a preset set of options, such as printing the type of page as a page header.</p>
+
+<p>In addition to printing the choice value, this module is useful for defining conditional template logic, when combined with the parameter <strong>export&#95;to&#95;template&#95;context</strong>. Learn more about <a href="/docs/building-blocks/modules/export-to-template-context"><strong>export&#95;to&#95;template&#95;context, here</strong></a>.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% choice "choice" %}
+{% choice "type_of_page" label='Choose the type of page', value='About', choices='About, Careers, Contact, Store' %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span id="hs_cos_wrapper_type_of_page" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_choice" style="" data-hs-cos-general-type="widget" data-hs-cos-type="choice"&gt;
+About
+&lt;/span&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>value</td>
+  <td>Boolean</td>
+  <td>The default field value for the dropdown</td>
+</tr>
+<tr>
+  <td>choices</td>
+  <td>Sequence</td>
+  <td>A comma-separated list of values, or list of value-label pairs. The syntax for value label pairs is as follows: choices='[[\"value1\", \"Label 1\"], [\"value2\", \"Label 2\"]]'. The editor will display the label, while it will print the value to the page.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

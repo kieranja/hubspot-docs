@@ -1,0 +1,96 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>resize_image_url</h1>
+
+<p>Rewrites the URL of image stored in File Manager to a URL that will resize the image on request. The function accepts one required parameter, and five optional parameters. At least one optional parameter must be passed.</p>
+
+<p>Required</p>
+
+<ul>
+<li><code>URL</code>: string, URL of a HubSpot-hosted image</li>
+</ul>
+
+<p>Optional</p>
+
+<ul>
+<li>width: number, the new image width in pixels</li>
+<li>height: number, the new image height in pixels</li>
+<li>length: number, the new length of the largest side, in pixels</li>
+<li>upscale: boolean, use the resized image dimensions even if they would scale up the original image (images may appear blurry)</li>
+<li>upsize: boolean, return the resized image even if it is larger than the original in bytes</li>
+</ul>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ resize_image_url("http://your.hubspot.site/hubfs/img.jpg", 0, 0, 300) }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">http://your.hubspot.site/hubfs/img.jpg?length=300&amp;name=img.jpg
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>url</td>
+  <td>String</td>
+  <td>URL of a HubSpot-hosted image.</td>
+</tr>
+<tr>
+  <td>width</td>
+  <td>Integer (px)</td>
+  <td>The new image width, in pixels.</td>
+</tr>
+<tr>
+  <td>height</td>
+  <td>Integer (px)</td>
+  <td>The new image height, in pixels.</td>
+</tr>
+<tr>
+  <td>length</td>
+  <td>Integer (px)</td>
+  <td>The new length of the largest side, in pixels.</td>
+</tr>
+<tr>
+  <td>upscale</td>
+  <td>Boolean</td>
+  <td>Use the resized image dimensions even if they would scale up the original image (images may appear blurry).</td>
+</tr>
+<tr>
+  <td>upsize</td>
+  <td>Boolean</td>
+  <td>Return the resized image even if it is larger than the original in bytes.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Blog social sharing</h1>
+
+<p>Blog social sharing renders share counters on your blog posts (if enabled in Content Settings).</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% blog_social_sharing "blog_social_sharing" %}
+{% blog_social_sharing "blog_social_sharing" select_blog='359485112' %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span id="hs_cos_wrapper_blog_social_sharing" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_blog_social_sharing" style="" data-hs-cos-general-type="widget" data-hs-cos-type="blog_social_sharing"&gt;
+     &lt;div class="hs-blog-social-share"&gt;
+          &lt;ul class="hs-blog-social-share-list"&gt;
+               &lt;li class="hs-blog-social-share-item hs-blog-social-share-item-twitter"&gt;
+                     &lt;a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-url="http://designers.hubspot.com/blog" data-size="medium" data-text=""&gt;Tweet&lt;/a&gt;
+               &lt;/li&gt;
+               &lt;li class="hs-blog-social-share-item hs-blog-social-share-item-linkedin"&gt;
+                    &lt;script type="IN/Share" data-url="http://designers.hubspot.com/blog" data-showzero="true" data-counter="right"&gt;&lt;/script&gt;
+                &lt;/li&gt;
+                &lt;li class="hs-blog-social-share-item hs-blog-social-share-item-facebook"&gt;
+                     &lt;div class="fb-like" data-href="http://designers.hubspot.com/blog" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" data-width="120"&gt;&lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="hs-blog-social-share-item hs-blog-social-share-item-google-plus"&gt;
+                      &lt;div class="g-plusone" data-size="medium" data-href="http://designers.hubspot.com/blog"&gt;&lt;/div&gt;
+                &lt;/li&gt;
+          &lt;/ul&gt;
+      &lt;/div&gt;
+&lt;/span&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>select_blog</td>
+  <td>'default' or blog ID</td>
+  <td>Species which blog is connected to the share counters. This parameter accepts arguments of either 'default' or a blog ID (available in the URL of the Blog dashboard). If you want to use your default blog, this parameter is unnecessary.</td>
+  <td>default</td>
+</tr>
+<tr>
+  <td>downgrade_shared_url</td>
+  <td>Boolean</td>
+  <td>Use HTTP in the url sent to the social media networks. Used to preserve counts when upgrading domains to HTTPS only.</td>
+  <td>false</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>groupby</h1>
+
+<p>The groupby filter groups a sequence of objects by a common attribute.The parameter sets the common attribute to group by.
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>attribute <code>Required</code></td>
+  <td>The attribute to group by.</td>
+</tr>
+</tbody>
+</table></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">&lt;ul&gt;
+{% for group in contents|groupby('blog_post_author') %}
+    &lt;li&gt;{{ group.grouper }}
+      &lt;ul&gt;
+        {% for content in group.list %}
+          &lt;li&gt;{{ content.name }}&lt;/li&gt;
+        {% endfor %}
+      &lt;/ul&gt;
+    &lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;ul&gt;
+    &lt;li&gt;Blog author 1
+        &lt;ul&gt;
+          &lt;li&gt;Post by Blog author 1&lt;li&gt;
+          &lt;li&gt;Post by Blog author 1&lt;li&gt;
+          &lt;li&gt;Post by Blog author 1&lt;li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;  
+    &lt;li&gt;Blog author 2
+        &lt;ul&gt;
+          &lt;li&gt;Post by Blog author 2&lt;li&gt;
+          &lt;li&gt;Post by Blog author 2&lt;li&gt;
+          &lt;li&gt;Post by Blog author 2&lt;li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Blog author 3
+        &lt;ul&gt;
+          &lt;li&gt;Post by Blog author 3&lt;li&gt;
+          &lt;li&gt;Post by Blog author 3&lt;li&gt;
+          &lt;li&gt;Post by Blog author 3&lt;li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

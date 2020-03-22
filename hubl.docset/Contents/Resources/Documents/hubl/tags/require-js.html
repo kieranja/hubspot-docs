@@ -1,0 +1,71 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Require_js</h1>
+
+<p>A HubL tag that enqueues a script element to be rendered. To enqueue a script to render in the &lt;head /&gt;from a different file via a &lt;script /&gt; element (as opposed to inline as shown here), use the HubL function require&#95;js(absolute&#95;url) instead.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ standard_header_includes }}
+&lt;!-- more html --&gt;
+
+{% require_js position="footer" %}
+    &lt;script&gt;
+        console.log("The CMS is awesome!");
+    &lt;/script&gt;
+{% end_require_js %}
+
+{{ standard_footer_includes }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;!-- other standard header html --&gt;
+&lt;!-- more html --&gt;
+&lt;script&gt;
+    console.log("The CMS is awesome!");
+&lt;/script&gt;
+&lt;!-- other standard footer html --&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>position</td>
+  <td>String</td>
+  <td>Set the position where the inline script will be rendered. Options include: "head" and "footer".</td>
+  <td>'footer'</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

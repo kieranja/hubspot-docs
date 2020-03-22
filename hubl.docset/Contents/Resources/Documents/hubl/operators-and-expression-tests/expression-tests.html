@@ -1,0 +1,480 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Expression tests</h1>
+
+<p>Expression tests are various boolean conditions that can be evaluated by using logical operators.
+The <code>containing</code> expression test checks to see whether a list variable has a value in it.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set numbers = [1, 2, 3] %}
+
+{% if numbers is containing 2 %}
+    Set contains 2!
+{% endif %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">Set contains 2!
+</code></pre>
+
+<p>The <code>containingall</code> expression test checks if a list variable contains all of the values of another list.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set numbers = [1, 2, 3] %}
+
+{% if numbers is containingall [2, 3] %}
+    Set contains 2 and 3!
+{% endif %}
+
+{% if numbers is containingall [2, 4] %}
+    Set contains 2 and 4!
+{% endif %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">Set contains 2 and 3!
+</code></pre>
+
+<p>The <strong>defined</strong> expression test checks to see whether a variable is defined within the context of the template. While you can use this expression test, writing an if statement without any operators will default to checking whether or not the variable is defined.</p>
+
+<p>In the example below, a color module's color parameter is tested. If the color parameter had no value, the template would render a default black background color. If it is defined, it renders the background color set by the user.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% color "my_color" color='#930101', export_to_template_context=True %}
+&lt;style&gt;
+{% if widget_data.my_color.color is defined %}
+body{
+    background: {{ widget_data.my_color.color }};
+}
+{% else %}
+body{
+    background: #000;
+}
+{% endif %}
+&lt;/style&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;style&gt;
+
+body{
+    background: #930101;
+}
+
+&lt;/style&gt; 
+</code></pre>
+
+<p>The expression test <strong>divisibleby</strong> can be used to test whether an object is divisible by another number.</p>
+
+<p>For example, below a for loop is created that iterates through a list of types of animals. Each type of animal gets printed in a div, and every 5th div has different inline styling applied (width:100%). This concept could be applied to a blog where different markup is rendered for a certain pattern of posts. To learn more about for loops and loop.index, <a href="https://designers.hubspot.com/docs/hubl/for-loops?hsLang=en">check out this article</a>.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set animals = ['lions', 'tigers', 'bears', 'dogs', 'sharks'] %} 
+{% for animal in animals %} 
+    {% if loop.index is divisibleby 5 %}
+    &lt;div style="width:100%"&gt;{{animal}}&lt;/div&gt; 
+    {% else %}
+    &lt;div style="width:25%"&gt;{{animal}}&lt;/div&gt;
+    {% endif %}
+{% endfor %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;div style="width:25%"&gt;lions&lt;/div&gt; 
+&lt;div style="width:25%"&gt;tigers&lt;/div&gt; 
+&lt;div style="width:25%"&gt;bears&lt;/div&gt; 
+&lt;div style="width:25%"&gt;dogs&lt;/div&gt; 
+&lt;div style="width:100%"&gt;sharks&lt;/div&gt; 
+</code></pre>
+
+<p>The <strong>equalto</strong> expression test checks to see if a variable's value is equal to a constant or another variable. You can also use the operator == to do the same test.</p>
+
+<p>In the example below, the width of the blog posts is adjusted based on the total number of posts in the loop. The example output assumes there were 4 posts in the blog.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% for content in contents %}
+    {% if loop.length is equalto 2 %}
+        &lt;div style="width:50%;"&gt;Post content&lt;/div&gt;
+    {% elif loop.length is equalto 3 %}  
+        &lt;div style="width:33.333332%;"&gt;Post content&lt;/div&gt;
+    {% elif loop.length is equalto 4 %}  
+        &lt;div style="width:25%;"&gt;Post content&lt;/div&gt;    
+    {% else %}
+        &lt;div style="width:100%;&gt;Post content&lt;/div&gt;
+    {% endif %}
+{% endfor %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;div style="width:25%;"&gt;Post content&lt;/div&gt;
+&lt;div style="width:25%;"&gt;Post content&lt;/div&gt;
+&lt;div style="width:25%;"&gt;Post content&lt;/div&gt;
+&lt;div style="width:25%;"&gt;Post content&lt;/div&gt;
+</code></pre>
+
+<p>The <strong>even</strong> expression test checks to see whether a numeric variable is an even number.</p>
+
+<p>The example below shows a simplified blog listing loop, where if the current iteration of the loop is even, a class of even-post is assigned to the post item div. Otherwise, a class of odd-post is assigned.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% for content in contents %}
+   {% if loop.index is even %}
+        &lt;div class="post-item even-post"&gt;Post content&lt;/div&gt;
+    {% else %}
+        &lt;div class="post-item odd-post"&gt;Post content&lt;/div&gt;
+    {% endif %}
+{% endfor %} 
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;div class="post-item odd-post"&gt;Post content&lt;/div&gt;
+&lt;div class="post-item even-post"&gt;Post content&lt;/div&gt;
+&lt;div class="post-item odd-post"&gt;Post content&lt;/div&gt;
+&lt;div class="post-item even-post"&gt;Post content&lt;/div&gt;
+</code></pre>
+
+<p>Checks to see whether a variable is <strong>iterable</strong> and can be looped through.</p>
+
+<p>This example checks a variable called "jobs" to see if it can be iterated through. Since the variable contains a list of jobs, the if statement would evaluate to true, and the loop would run. If the variable had contained a single value, the <a href="http://developers-web1-hubspot.sites.hubspot.com/docs/hubl/if-statements?hsLang=en">if statement</a> would print that value with different markup instead. <a href="https://designers.hubspot.com/docs/hubl/for-loops?hsLang=en">You can learn more about for loops here</a>.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set jobs = ['Accountant', 'Developer', 'Manager', 'Marketing', 'Support'] %} 
+
+{% if jobs is iterable %}
+&lt;h3&gt;Available positions&lt;/h3&gt;
+&lt;ul&gt;
+{% for job in jobs %}
+    &lt;li&gt;{{ job }}&lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+{% else %}
+&lt;h3&gt;Available position&lt;/h3&gt;
+&lt;div class="single-position"&gt;{{ jobs }}&lt;/div&gt;
+{% endif %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;h3&gt;Available positions&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Accountant&lt;/li&gt;
+    &lt;li&gt;Developer&lt;/li&gt;
+    &lt;li&gt;Manager&lt;/li&gt;
+    &lt;li&gt;Marketing&lt;/li&gt;
+    &lt;li&gt;Support&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>The <strong>lower</strong> expression test evaluates to true when a string is lowercase.</p>
+
+<p>The example below uses an <a href="http://developers-web1-hubspot.sites.hubspot.com/docs/hubl/if-statements?hsLang=en#unless-statements">unless statement</a> and a lower filter to ensure that a string of text entered into a text module is always lowercase.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% module "my_text" path="@hubspot/text" label='Enter text', value='Some TEXT that should be Lowercase', export_to_template_context=True %}
+
+{% unless widget_data.my_text.value is lower %}
+{{ widget_data.my_text.value|lower }}
+{% endunless %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">some text that should be lowercase
+</code></pre>
+
+<p>The <strong>mapping</strong> expression test checks to see whether or not an object is a dict (dictionary).</p>
+
+<p>The example below is checking to see if the contact object is a dictionary, in which case it is.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% if contact is mapping %}
+This object is a dictionary.
+{% else %}
+This object is not a dictionary.
+{% endif %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">This object is a dictionary.
+</code></pre>
+
+<p>The <strong>none</strong> expression test checks to see whether a variable has a null value.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% module "user_email" path="@hubspot/text" label='Enter user email', value='example@hubspot.com', export_to_template_context=True %}
+{% unless widget_data.user_email.value is none %}
+{{ widget_data.user_email.value }}
+{% endunless %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">example@hubspot.com
+</code></pre>
+
+<p>The <strong>number</strong> expression test checks to see whether or not the value of a variable is a number.</p>
+
+<p>The example below checks a variable to see whether or not it is a variable, and if so it converts it into millions.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set my_var = 40 %}
+{% if my_var is number %}
+{{ my_var * 1000000 }}
+{% else %}
+my_var is not a number.
+{% endif %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">40000000
+</code></pre>
+
+<p>The <strong>odd</strong> expression test checks to see whether a numeric variable is an odd number.</p>
+
+<p>Below is the same example as the inverse even expression test previously described.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% for content in contents %}
+   {% if loop.index is odd %}
+        &lt;div class="post-item odd-post"&gt;Post content&lt;/div&gt;
+    {% else %}
+        &lt;div class="post-item even-post"&gt;Post content&lt;/div&gt;
+    {% endif %}
+{% endfor %} 
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;div class="post-item odd-post"&gt;Post content&lt;/div&gt;
+&lt;div class="post-item even-post"&gt;Post content&lt;/div&gt;
+&lt;div class="post-item odd-post"&gt;Post content&lt;/div&gt;
+&lt;div class="post-item even-post"&gt;Post content&lt;/div&gt;
+</code></pre>
+
+<p>The <strong>sameas</strong> expression test checks to see whether or not two variables have the same value.</p>
+
+<p>The example below sets two variables and then checks to see whether or not they are the same.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set var_one = True %}
+{% set var_two = True %}
+{% if var_one is sameas var_two  %}
+The variables values are the same.
+{% else %}
+The variables values are different.
+{% endif %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">The variables values are the same.
+</code></pre>
+
+<p>The <strong>sequence</strong> expression test is similar to the <strong>iterable</strong> test, in that it checks to see whether or not a variable is a sequence.</p>
+
+<p>The example below checks whether a variable is a sequence and then iterates through that sequence of musical genres.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set genres = ['Pop', 'Rock', 'Disco', 'Funk', 'Folk', 'Metal', 'Jazz', 'Country', 'Hip-Hop', 'Classical', 'Soul', 'Electronica' ] %} 
+{% if genres is sequence %}
+&lt;h3&gt;Favorite genres&lt;/h3&gt;
+&lt;ul&gt;
+{% for genre in genres %}
+    &lt;li&gt;{{ genre }}&lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+{% else %}
+&lt;h3&gt;Favorite genre:&lt;/h3&gt;
+    &lt;div class='single-genre'&gt;{{ genres }}&lt;/div&gt;
+{% endif %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;ul&gt;
+    &lt;li&gt;Pop&lt;/li&gt;
+    &lt;li&gt;Rock&lt;/li&gt;
+    &lt;li&gt;Disco&lt;/li&gt;
+    &lt;li&gt;Funk&lt;/li&gt;
+    &lt;li&gt;Folk&lt;/li&gt;
+    &lt;li&gt;Metal&lt;/li&gt;
+    &lt;li&gt;Jazz&lt;/li&gt;
+    &lt;li&gt;Country&lt;/li&gt;
+    &lt;li&gt;Hip-Hop&lt;/li&gt;
+    &lt;li&gt;Classical&lt;/li&gt;
+    &lt;li&gt;Soul&lt;/li&gt;
+    &lt;li&gt;Electronica&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>The <strong>string</strong> expression test checks to see whether the value stored in a variable is text.</p>
+
+<p>The example below checks whether or not a variable is a string, and if so it applies a title filter to change the capitalization.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set my_var = "title of section" %}
+{% if my_var is string %}
+{{ my_var|title }}
+{% else %}
+my_var is not a string
+{% endif %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">Title Of Section
+</code></pre>
+
+<p>This test checks to see if a string is contained within another string. This expression test is used in conjunction with the "is" operator.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% if content.domain is string_containing ".es" %}
+Markup that will only render on content hosted on .es domains
+{% elif content.domain is string_containing ".jp" %}
+Markup that will only render on content hosted on .jp domains
+{% else %}
+Markup that will render on all other domains
+{% endif %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">Markup that will render on all other domains
+</code></pre>
+
+<p>This expression test checks to see if a string starts with a particular string. It is used in conjunction with the "is" operator.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% if content.slug is string_startingwith "es/" %}
+Markup that will only render on content hosted in a /es/ subdirectory
+{% elif content.slug is string_startingwith "jp/" %}
+Markup that will only render on content hosted in a /jp/ subdirectory
+{% else %}
+Markup that will render on all subdirectories
+{% endif %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">Markup that will render on all subdirectories
+</code></pre>
+
+<p>The <strong>truthy</strong> expression test checks to see whether an expression evaluates to True.</p>
+
+<p>The example below uses a boolean checkbox module to display an alert message.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% boolean "check_box" label='Show alert', value=True, export_to_template_context=True %}
+
+{% if widget_data.check_box.value is truthy %}
+&lt;div class='alert'&gt;Danger!&lt;/div&gt;
+{% endif %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;div class='alert'&gt;Danger!&lt;/div&gt;
+</code></pre>
+
+<p>The <strong>undefined</strong> expression test checks to see whether a variable is undefined in the context of the template. This test is different from none, in that undefined will be true when the variable is present but has no value; whereas, none will be true when the variable has a null value.</p>
+
+<p>The example below checks a template for the existence of the variable "my&#95;var".</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% if my_var is undefined %}
+A variable named "my_var" does not exist on this template.
+{% else %}
+{{ my_var }}
+{% endif %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">A variable named "my_var" does not exist on this template.
+</code></pre>
+
+<p>The <strong>upper</strong> expression test evaluates to true when a string is all uppercase. Below is an inverse example of the lower expression test above.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% module "my_text" path="@hubspot/text" label='Enter text', value='Some TEXT that should be Uppercase', export_to_template_context=True %}
+
+{% unless widget_data.my_text.value is upper %}
+{{ widget_data.my_text.value|upper }}
+{% endunless %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">SOME TEXT THAT SHOULD BE UPPERCASE
+</code></pre>
+
+<p>The <strong>within</strong> expression tests checks if a variable is within a list.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set numbers = [1, 2, 3] %}
+
+{% if 2 is within numbers %}
+    2 is in the list!
+{% endif %}
+
+{% if 4 is within numbers %}
+    4 is in the list!
+{% endif %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">2 is in the list!
+</code></pre>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>split</h1>
+
+<p>Splits the input string into a list on the given separator. The first parameter specifies the separator to split the variable by. The second parameter determines how many times the variable should be split. Any remaining items would remained group. In the example below, a string of names is split at the ";" for the first 4 names.
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>character_to_split_by <code>Required</code></td>
+  <td>Specifies the separator to split the variable by.</td>
+</tr>
+<tr>
+  <td>number_of_splits <code>Required</code></td>
+  <td>Determines how many times the variable should be split. Any remaining items would remain grouped.</td>
+</tr>
+</tbody>
+</table></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set string_to_split = "Stephen; David; Cait; Nancy; Mike; Joe; Niall; Tim; Amanda" %}
+{% set names = string_to_split|split(';', 4) %}
+&lt;ul&gt;
+{% for name in names %}
+  &lt;li&gt;{{ name }}&lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;ul&gt;
+  &lt;li&gt;Stephen&lt;/li&gt;
+  &lt;li&gt;David&lt;/li&gt;
+  &lt;li&gt;Cait&lt;/li&gt;
+  &lt;li&gt;Nancy; Mike; Joe; Niall; Tim; Amanda&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

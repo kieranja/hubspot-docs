@@ -1,0 +1,98 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>CTA</h1>
+
+<p>A Call to Action or CTA module allows users to add a HubSpot Call to Action button to a predefined area of a page.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% cta "cta" %}
+{% cta "my_cta" label='Select a CTA', guid='ccd39b7c-ae18-4c4e-98ee-547069bfbc5b', image_src='https://no-cache.hubspot.com/cta/default/53/c7335b66-a0d4-4d19-82eb-75e1626d02d0.png' %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span id="hs_cos_wrapper_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_cta" style="" data-hs-cos-general-type="widget" data-hs-cos-type="cta"&gt;
+    &lt;!--HubSpot Call-to-Action Code --&gt; 
+    &lt;span class="hs-cta-wrapper" id="hs-cta-wrapper-ccd39b7c-ae18-4c4e-98ee-547069bfbc5b"&gt;
+        &lt;span class="hs-cta-node hs-cta-ccd39b7c-ae18-4c4e-98ee-547069bfbc5b" id="hs-cta-ccd39b7c-ae18-4c4e-98ee-547069bfbc5b" style="visibility: visible;"&gt;
+            &lt;a id="cta_button_158015_19a9097a-8dff-4181-b8f7-955a47f29826" class="cta_button " href="//cta-service-cms2.hubspot.com/ctas/v2/public/cs/c/?cta_guid=19a9097a-8dff-4181-b8f7-955a47f29826&amp;placement_guid=ccd39b7c-ae18-4c4e-98ee-547069bfbc5b&amp;portal_id=158015&amp;redirect_url=APefjpFSOqhysLBE-Yye5WFoP82Swxb2PVWpfI3VxlUjuOCHfiVMcxKic3yM28vuwu9UB8_Jyhk6DGRCEN63hKqQOMtMTGmQZ1UNMK3LtNx0sRrAfQQYna2BfZ9RmgQOs8sKO_PcKOP6G26L5wQ5vdcXXOiMCxFPJxzPzUCcl474iiHKbEo5H8LVtZf6e140VOSGJ37NTpxCcPHLDvH9iFaT6mR0BnKzFReaX0FXBj7Lx2rFLVCZcIC0bdaFEGI1uKOJBMNT9RDtEzeJzUHzFYN0b34uv-ZR4w&amp;hsutk=683eeb5b499fdfdf469646f0014603b4&amp;utm_referrer=http%3A%2F%2Fwww.davidjosephhunt.com%2Fvariables%3Fhs_preview%3D159bC1Cj-2863569740&amp;canon=http%3A%2F%2Fwww.davidjosephhunt.com%2Fvariables" style="" cta_dest_link="http://www.hubspot.com/free-trial" title="Start a HubSpot trial"&gt; Start a HubSpot trial &lt;/a&gt;
+        &lt;/span&gt;
+        &lt;script charset="utf-8" src="//js.hscta.net/cta/current.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript"&gt;
+            hbspt.cta.load(158015, 'ccd39b7c-ae18-4c4e-98ee-547069bfbc5b');    
+        &lt;/script&gt;
+    &lt;/span&gt;  
+    &lt;!-- end HubSpot Call-to-Action Code --&gt;
+&lt;/span&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>embed_code</td>
+  <td>String</td>
+  <td>The embed code for the CTA. \n differentiates line breaks.</td>
+</tr>
+<tr>
+  <td>full_html</td>
+  <td>String</td>
+  <td>The embed code for the CTA (Same as embed_code). \n differentiates line breaks.</td>
+</tr>
+<tr>
+  <td>image_src</td>
+  <td>String</td>
+  <td>Image src url that defines the preview image in the content editor.</td>
+</tr>
+<tr>
+  <td>image_editor</td>
+  <td>String</td>
+  <td>Markup for the image editor preview</td>
+</tr>
+<tr>
+  <td>guid</td>
+  <td>String</td>
+  <td>The unique ID number of the CTA. This ID number is available in the URL of the Details screen of a particular CTA. This parameter is used to choose which CTA to display by default.</td>
+</tr>
+<tr>
+  <td>image_html</td>
+  <td>String</td>
+  <td>CTA image HTML without the CTA script.*</td>
+</tr>
+<tr>
+  <td>image_email</td>
+  <td>String</td>
+  <td>Email-friendly version of the CTA code.*</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

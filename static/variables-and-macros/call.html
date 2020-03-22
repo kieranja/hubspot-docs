@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Call</h1>
+
+<p>In some instances, you may want to pass additional dynamic information back into the macro block. For example, you may have a large piece of code that you want to feed back into the macro, in addition to the arguments. You can do this using call block and caller(). A call block works essentially like a macro but does not get its own name. The expression caller() specifies where the contents of the call block will render.</p>
+
+<p>In the example below, a `` is added into a macro in addition to the two arguments.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2"> {% macro render_dialog(title, class) %}
+  &lt;div class="{{ class }}"&gt;
+      &lt;h2&gt;{{ title }}&lt;/h2&gt;
+      &lt;div class="contents"&gt;
+          {{ caller() }}
+      &lt;/div&gt;
+  &lt;/div&gt;
+ {% endmacro %}
+
+ {% call render_dialog('Hello World', 'greeting') %}
+     &lt;p&gt;This is a paragraph tag that I want to render in my.&lt;/p&gt;
+ {% endcall %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;div class="greeting"&gt;
+      &lt;h2&gt;Hello World&lt;/h2&gt;
+      &lt;div class="contents"&gt;
+
+     &lt;p&gt;This is a simple dialog rendered by using a macro and
+     a call block.&lt;/p&gt;
+
+      &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

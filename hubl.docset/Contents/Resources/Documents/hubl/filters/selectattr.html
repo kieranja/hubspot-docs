@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>selectattr</h1>
+
+<p>Filters a sequence of objects by applying a test to an attribute of an object and only selecting the ones with the test succeeding.
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>attribute_name <code>Required</code></td>
+  <td>Specifies the attribute to select. You can access nested attributes using dot notation.</td>
+</tr>
+<tr>
+  <td>exp_test <code>Optional</code></td>
+  <td>The expression to test</td>
+</tr>
+<tr>
+  <td>val <code>Optional</code></td>
+  <td>Value to test against.</td>
+</tr>
+</tbody>
+</table></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% for content in contents|selectattr('post_list_summary_featured_image') %}
+&lt;div class="post-item"&gt;
+  {% if content.post_list_summary_featured_image %}
+    &lt;div class="hs-featured-image-wrapper"&gt;
+       &lt;a href="{{content.absolute_url}}" title="" class="hs-featured-image-link"&gt;
+         &lt;img src="{{ content.post_list_summary_featured_image }}" class="hs-featured-image"&gt;
+       &lt;/a&gt;
+    &lt;/div&gt;
+  {% endif %}
+{{ content.post_list_content|safe }}
+&lt;/div&gt;
+{% endfor %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;div class="post-item"&gt;
+  &lt;div class="hs-featured-image-wrapper"&gt;
+     &lt;a href="http://blog.hubspot.com/marketing/how-to-get-a-job" title="" class="hs-featured-image-link"&gt;
+       &lt;img src="//cdn2.hubspot.net/hub/53/hubfs/00-Blog-Related_Images/landing-a-job-featured-image.png?t=1431452322770&amp;width=761" class="hs-featured-image"&gt;
+     &lt;/a&gt;
+   &lt;/div&gt;
+Post with featured image
+&lt;/div&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

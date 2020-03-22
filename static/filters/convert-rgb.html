@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>convert_rgb</h1>
+
+<p>Converts a HEX value to an RGB string. This is useful if you need to convert color variables to RGB to be used with a RGBA CSS declaration. In the example below, the value set by a color module is converted to an RGB value and used in an RGBA CSS declaration.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set my_color = "#FFFFFF" %}
+{{ my_color|convert_rgb }}
+
+{% color "my_color" color="#000000", export_to_template_context=True %}
+&lt;div style="background: rgba({{ widget_data.my_color.color|convert_rgb }}, .5)"&gt;&lt;/div&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">255, 255, 255
+
+&lt;div style="background: rgba(0, 0, 0, .5)"&gt;&lt;/div&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

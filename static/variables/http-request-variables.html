@@ -1,0 +1,104 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>HTTP request variables</h1>
+
+<p>The following variables print information about the HTTP page request.
+<table>
+<thead>
+<tr>
+  <th>Variable</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>request.cookies</td>
+  <td>Dict</td>
+  <td>A dictionary of cookie names mapped to cookie values.Use of this variable will disable page caching. </td>
+</tr>
+<tr>
+  <td>request.domain</td>
+  <td>String</td>
+  <td>The domain used to access this page</td>
+</tr>
+<tr>
+  <td>request.full_url</td>
+  <td>String</td>
+  <td>The URL used to access this page, with the query string</td>
+</tr>
+<tr>
+  <td>request.path</td>
+  <td>String</td>
+  <td>The path component of the URL</td>
+</tr>
+<tr>
+  <td>request.path_and_query</td>
+  <td>String</td>
+  <td>The path and query component of the URL</td>
+</tr>
+<tr>
+  <td>request.query</td>
+  <td>String</td>
+  <td>The query string component of the URL</td>
+</tr>
+<tr>
+  <td>request.query_dict</td>
+  <td>Dict</td>
+  <td>The query string coverted into a name->value dictionary</td>
+</tr>
+<tr>
+  <td>request.referrer</td>
+  <td>String</td>
+  <td>The HTTP referrer, the url of the page that linked to the current page.Use of this variable will disable page caching. </td>
+</tr>
+<tr>
+  <td>request.remote_ip</td>
+  <td>String</td>
+  <td>The IP address of the visitor.Use of this variable will disable page caching.</td>
+</tr>
+<tr>
+  <td>request.scheme</td>
+  <td>String</td>
+  <td>The protocol of the request (either http or https)</td>
+</tr>
+<tr>
+  <td>request.search_engine</td>
+  <td>String</td>
+  <td>The search engine used to find this page, if applicable. Ex: google, aol, live, yahoo, images.google, etc</td>
+</tr>
+<tr>
+  <td>request.search_keyword</td>
+  <td>String</td>
+  <td>The keyword phrase used to find this page, if applicable</td>
+</tr>
+<tr>
+  <td>request.headers</td>
+  <td>String</td>
+  <td>A dictionary of available request headers</td>
+</tr>
+</tbody>
+</table></p>
+
+    </div>
+</body>
+</html>

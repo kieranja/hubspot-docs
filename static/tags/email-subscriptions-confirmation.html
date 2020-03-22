@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Email subscriptions confirmation</h1>
+
+<p>The email subscriptions update confirmation is a module that can be added to the thank you template for when a recipient updates his or her subscription preferences or unsubscribes. It should be used on a <a href="https://knowledge.hubspot.com/cos-general/use-system-templates-to-customize-error-subscription-and-password-prompt-pages">Subscription Preference system template.</a></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% email_subscriptions_confirmation "email_subscriptions_confirmation" %}
+{% email_subscriptions_confirmation "email_subscriptions_confirmation" label='Subscriptions Update Confirmation', unsubscribe_all_success='You have successfully unsubscribed from all email communications.', subscription_update_success='You have successfully updated your email preferences.', subheader_text='\n    If this is not your email address, please ignore this page since the email associated with this page was most likely forwarded to you.\n' %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions_confirmation" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions_confirmation" id="hs_cos_wrapper_email_subscriptions_confirmation" style=""&gt;&lt;/span&gt;
+&lt;div class="page-header"&gt;
+    &lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions_confirmation" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions_confirmation" id="hs_cos_wrapper_email_subscriptions_confirmation" style=""&gt;&lt;/span&gt;
+    &lt;h2&gt;&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions_confirmation" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions_confirmation" id="hs_cos_wrapper_email_subscriptions_confirmation" style=""&gt;example@email.com&lt;/span&gt;&lt;/h2&gt;&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions_confirmation" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions_confirmation" id="hs_cos_wrapper_email_subscriptions_confirmation" style=""&gt;&lt;br&gt;&lt;/span&gt;
+    &lt;p&gt;&lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions_confirmation" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions_confirmation" id="hs_cos_wrapper_email_subscriptions_confirmation" style=""&gt;If this is not your email address, please ignore this page since the email associated with this page was most likely forwarded to you.&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="success" id="content"&gt;
+    &lt;span class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_email_subscriptions_confirmation" data-hs-cos-general-type="widget" data-hs-cos-type="email_subscriptions_confirmation" id="hs_cos_wrapper_email_subscriptions_confirmation" style=""&gt;You have successfully updated your email preferences.&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>header</td>
+  <td>String</td>
+  <td>Renders text in an h1 tag above the unsubscribe form.</td>
+  <td>"Communication Preferences"</td>
+</tr>
+<tr>
+  <td>subheader_text</td>
+  <td>String</td>
+  <td>Populates text above the confirmation message.</td>
+  <td>"</td>
+</tr>
+</tbody>
+</table>
+
+<p>\n    If this is not your email address, please ignore this page since the email associated with this page was most likely forwarded to you.\n</p>
+
+<p>" | 
+| unsubscribe_all_success | String | Sets the text that will display when someone unsubscribes from all email communications. | "You have successfully unsubscribed from all email communications." | 
+| subscription_update_success | String | Sets the text when a recipient updates his or her subscription preferences. | "You have successfully updated your email preferences." |</p>
+
+    </div>
+</body>
+</html>

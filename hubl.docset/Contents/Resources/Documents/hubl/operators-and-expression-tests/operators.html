@@ -1,0 +1,208 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Operators</h1>
+
+<table>
+<thead>
+<tr>
+  <th>Symbol</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>+</td>
+  <td>Adds two objects together. You will generally use this for the addition of numbers. If you are trying to concatenate strings of lists, you should use ~ instead.</td>
+</tr>
+<tr>
+  <td>-</td>
+  <td>Subtracts one number from another.</td>
+</tr>
+<tr>
+  <td>/</td>
+  <td>Divides numbers</td>
+</tr>
+<tr>
+  <td>%</td>
+  <td>Returns the remainder from dividing numbers</td>
+</tr>
+<tr>
+  <td>//</td>
+  <td>Divide two numbers and return the truncated integer result. Example: {{ 20 // 7 }} is 2</td>
+</tr>
+<tr>
+  <td>*</td>
+  <td>Multiplies numbers</td>
+</tr>
+<tr>
+  <td>**</td>
+  <td>Raise the left operand to the power of the right operand</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set my_num = 11 %}
+{% set my_number = 2 %}
+
+{{ my_num + my_number }}&lt;br/&gt;  &lt;!-- 11 + 2 = 13 --&gt;
+{{ my_num - my_number }}&lt;br/&gt;  &lt;!-- 11 - 2 = 9 --&gt;
+{{ my_num / my_number }}&lt;br/&gt;  &lt;!-- 11 / 2 = 5.5 --&gt;
+{{ my_num % my_number }}&lt;br/&gt;  &lt;!-- 11 % 2 = 1 --&gt;
+{{ my_num // my_number }}&lt;br/&gt; &lt;!-- 11 // 2 = 5 --&gt;
+{{ my_num * my_number }}&lt;br/&gt;  &lt;!-- 11 * 2 = 22 --&gt;
+{{ my_num ** my_number }}&lt;br/&gt; &lt;!-- 11 ** 2 = 121 --&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">13
+9
+5.5
+1
+5
+22
+121
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Symbol</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>==</td>
+  <td>Equal to. Evaluates to true if two objects are equal. </td>
+</tr>
+<tr>
+  <td>!=</td>
+  <td>Not equal to. Evaluates to true if two objects are not equal.</td>
+</tr>
+<tr>
+  <td>></td>
+  <td>Greater than. Evaluates to true if the left-hand side is greater than the right-hand side.</td>
+</tr>
+<tr>
+  <td>>=</td>
+  <td>Greater than or equal to. Evaluates to true if the left-hand side is greater or equal to the right-hand side.</td>
+</tr>
+<tr>
+  <td>&lt;</td>
+  <td>Less than. Evaluates to true if the left-hand side is lower than the right-hand side.</td>
+</tr>
+<tr>
+  <td>&lt;=</td>
+  <td>Less than or equal to. Evaluates to true if the left-hand side is lower or equal to the right-hand side.</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set my_num = 11 %}
+{% set my_number = 2 %}
+
+{{ my_num == my_number }}&lt;br/&gt;  &lt;!-- false --&gt;
+{{ my_num != my_number }}&lt;br/&gt;  &lt;!-- true --&gt;
+{{ my_num &gt; my_number }}&lt;br/&gt;   &lt;!-- true --&gt;
+{{ my_num &gt;= my_number }}&lt;br/&gt;  &lt;!-- true --&gt;
+{{ my_num &lt; my_number }}&lt;br/&gt;   &lt;!-- false --&gt;
+{{ my_num &lt;= my_number }}&lt;br/&gt;  &lt;!-- false --&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">false
+true
+true
+true
+false
+false
+</code></pre>
+
+<p>Logical operators allow you to combine multiple expressions into single statements.
+<table>
+<thead>
+<tr>
+  <th>Symbol</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>and</td>
+  <td>Return true if the left and the right operand are true.</td>
+</tr>
+<tr>
+  <td>or</td>
+  <td>Return true if the left or the right operand is true.</td>
+</tr>
+<tr>
+  <td>not</td>
+  <td>Negates a statement and is used in conjunction with is. See examples below.</td>
+</tr>
+<tr>
+  <td>(expr)</td>
+  <td>Group an expression for the order of operations. For example, (10 - 2) * variable.</td>
+</tr>
+<tr>
+  <td>?:</td>
+  <td>The ternary operator accepts 3 arguments (expression, true condition, false condition). Evaluates an expression and returns the corresponding condition.</td>
+</tr>
+</tbody>
+</table></p>
+
+<p>Below are other important HubL operators that can be used to perform various tasks.
+<table>
+<thead>
+<tr>
+  <th>Symbol</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>in</td>
+  <td>Checks to see if a value is in a sequence.</td>
+</tr>
+<tr>
+  <td>is</td>
+  <td>Performs an expression test.</td>
+</tr>
+<tr>
+  <td></td>
+  <td>| Applies a filter.</td>
+</tr>
+<tr>
+  <td>~</td>
+  <td>Concatenates values.</td>
+</tr>
+</tbody>
+</table></p>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>cut</h1>
+
+<p>Removes a string from a value. This filter can be used to match and cut out a specific part of a string. The parameter specifies the part of the string that should be removed. The example below removes the space and the word world from the original variable value.
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>characters_to_cut <code>Required</code></td>
+  <td>The part of the string that should be removed.</td>
+</tr>
+</tbody>
+</table></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set my_string = "Hello world." %} 
+{{ my_string|cut(' world') }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">Hello.
+</code></pre>
+
+    </div>
+</body>
+</html>

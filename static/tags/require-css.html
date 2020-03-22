@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Require_css</h1>
+
+<p>A HubL tag that enqueues a style element to be rendered in the &lt;head&gt;. To enqueue a stylesheet from a different file to render in the &lt;head /&gt; via a &lt;link /&gt; tag (as opposed to inline as shown here), use the HubL function require&#95;css(absolute&#95;url) instead.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ standard_header_includes }}
+&lt;!-- more html --&gt;
+
+{% require_css %}
+    &lt;style&gt;
+        body {
+            color: red;
+        }
+    &lt;/style&gt;
+{% end_require_css %}
+
+{{ standard_footer_includes }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;!-- other standard header html --&gt;
+    &lt;style&gt;
+        body {
+            color: red;
+        }
+    &lt;/style&gt;
+&lt;!-- more html --&gt;
+&lt;!-- other standard footer html --&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

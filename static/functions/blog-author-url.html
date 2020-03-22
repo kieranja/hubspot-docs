@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>blog_author_url</h1>
+
+<p>The <code>blog_author_url</code> function returns a full URL to the specified blog author's listing page.</p>
+
+<p>The example below shows how this function can be used as an anchor's <code>href</code>. This can be combined with <code>blog_authors</code> as shown in that function's examples.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">&lt;a href="{{ blog_author_url('default', 'brian-halligan') }}"&gt;Brian Halligan&lt;/a&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;a href="http://blog.hubspot.com/marketing/author/brian-halligan"&gt;Brian Halligan&lt;/a&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>selected_blog</td>
+  <td>Blog id or 'default'</td>
+  <td>Specifies which blog the author's listing page exists in.</td>
+</tr>
+<tr>
+  <td>author_slug</td>
+  <td>String or HubL Var</td>
+  <td>Specifies which author to link to. Can use either content.blog_post_author.slug or a lowercase hyphenated name. Example: 'jane-doe'.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

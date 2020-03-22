@@ -1,0 +1,99 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Menu node variables</h1>
+
+<p>The following variables are available to use on the object returned by the <a href="/docs/hubl/functions#menu">HubL menu function</a>.
+<table>
+<thead>
+<tr>
+  <th>Variable</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>node.label</td>
+  <td>String</td>
+  <td>The menu label of the page.</td>
+</tr>
+<tr>
+  <td>node.url</td>
+  <td>String</td>
+  <td>URL of the page.</td>
+</tr>
+<tr>
+  <td>node.pageId</td>
+  <td>Number</td>
+  <td>ID of the page if within HubSpot.</td>
+</tr>
+<tr>
+  <td>node.contentGroupId</td>
+  <td>Number</td>
+  <td>Blog ID of the page if it is a HubSpot blog post.</td>
+</tr>
+<tr>
+  <td>node.parentNode</td>
+  <td>Object</td>
+  <td>The parent node of the current node. The parent node will have the current node in its children property.</td>
+</tr>
+<tr>
+  <td>node.children</td>
+  <td>List</td>
+  <td>The list of child nodes for the current node.</td>
+</tr>
+<tr>
+  <td>node.activeBranch</td>
+  <td>Boolean</td>
+  <td>True if the node is in the top-level branch that the current page is in.</td>
+</tr>
+<tr>
+  <td>node.activeNode</td>
+  <td>Boolean</td>
+  <td>True if the node is the current page.</td>
+</tr>
+<tr>
+  <td>node.level</td>
+  <td>Number</td>
+  <td>The number of levels deep the current node is from the top-level nodes.</td>
+</tr>
+<tr>
+  <td>node.pageTitle</td>
+  <td>String</td>
+  <td>Name of the content page if within HubSpot.</td>
+</tr>
+<tr>
+  <td>node.slug</td>
+  <td>String</td>
+  <td>Path slug of the page.</td>
+</tr>
+<tr>
+  <td>node.linkTarget</td>
+  <td>String</td>
+  <td>Link target of the page.</td>
+</tr>
+</tbody>
+</table></p>
+
+    </div>
+</body>
+</html>

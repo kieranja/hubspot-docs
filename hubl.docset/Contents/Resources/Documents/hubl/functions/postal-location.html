@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>postal_location</h1>
+
+<p>The <code>postal_location</code> function returns the latitude/longitude location pair for a given postal code and country code (limited to US, CA, and GB).</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ postal_location("02139") }}
+{% set location = postal_location("02139", "US") %}
+{{ location.latitude }}
+{{ location.longitude }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">LatLon{latitude=42.3647, longitude=-71.1042}
+42.3647
+-71.1042
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>postal_code</td>
+  <td>String</td>
+  <td>Postal code of the location.</td>
+</tr>
+<tr>
+  <td>country_code</td>
+  <td>String</td>
+  <td>Country code for the postal code. If not provided, the country will try to be inferred from the postal code.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

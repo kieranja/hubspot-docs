@@ -1,0 +1,125 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Loop properties</h1>
+
+<p>As a loop iterates, you can use <a href="/docs/hubl/if-statements">conditional logic</a> to define the loop's behavior. The variable property <code>loop.index</code> keeps a count of the current number of the iterations of the loop. There are several other loop variable properties that count the iterations in different ways. These properties are described below:
+<table>
+<thead>
+<tr>
+  <th>Variable</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>loop.cycle</td>
+  <td>A helper function to cycle between a list of sequences. See the explanation below.</td>
+</tr>
+<tr>
+  <td>loop.depth</td>
+  <td>Indicates how deep in deep in a recursive loop the rendering currently is. Starts at level 1</td>
+</tr>
+<tr>
+  <td>loop.depth0</td>
+  <td>Indicates how deep in deep in a recursive loop the rendering currently is. Starts at level 0</td>
+</tr>
+<tr>
+  <td>loop.first</td>
+  <td>This variable evaluates to true, if it is the first iteration of the loop.</td>
+</tr>
+<tr>
+  <td>loop.index</td>
+  <td>The current iteration of the loop. This variable starts counting at 1.</td>
+</tr>
+<tr>
+  <td>loop.index0</td>
+  <td>The current iteration of the loop. This variable starts counting at 0.</td>
+</tr>
+<tr>
+  <td>loop.last</td>
+  <td>This variable evaluates to true, if it is the last iteration of the loop.</td>
+</tr>
+<tr>
+  <td>loop.length</td>
+  <td>The number of items in the sequence.</td>
+</tr>
+<tr>
+  <td>loop.revindex</td>
+  <td>The number of iterations from the end of the loop. Counting down to 1.</td>
+</tr>
+<tr>
+  <td>loop.revindex0</td>
+  <td>The number of iterations from the end of the loop. Counting down to 1.</td>
+</tr>
+</tbody>
+</table></p>
+
+<p>Below are some examples that use different loop variables. The following basic example uses <code>loop.index</code> to keep a count that is printed with each iteration.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set loopy = ['Content', 'Social', 'Contacts', 'Reports'] %}
+{% for app in loopy %}
+    {{ loop.index }}. {{app}} &lt;br&gt;
+{% endfor %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">1. Content &lt;br&gt;
+2. Social &lt;br&gt;
+3. Contacts &lt;br&gt;
+4. Reports &lt;br&gt;
+</code></pre>
+
+<p>The next example uses conditional logic to check whether the length of the loop is <code>divisibleby</code> certain numbers. It then renders the width of the post-item div accordingly. The example uses the standard blog post loop and assumes that there are 6 posts in the loop.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% for content in contents %}
+{% if loop.length is divisibleby 4 %}
+&lt;div style="width:25%"&gt;Post content&lt;/div&gt;
+
+{% elif loop.length is divisibleby 3 %}
+&lt;div style="width:33.33332%"&gt;Post content&lt;/div&gt;
+
+{% else %}
+&lt;div style="width:50%"&gt;Post content&lt;/div&gt;
+
+{% endif %}
+{% endfor %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;div style="width:33.33332%"&gt;Post content&lt;/div&gt;
+&lt;div style="width:33.33332%"&gt;Post content&lt;/div&gt;
+&lt;div style="width:33.33332%"&gt;Post content&lt;/div&gt;
+&lt;div style="width:33.33332%"&gt;Post content&lt;/div&gt;
+&lt;div style="width:33.33332%"&gt;Post content&lt;/div&gt;
+&lt;div style="width:33.33332%"&gt;Post content&lt;/div&gt;
+&lt;div style="width:33.33332%"&gt;Post content&lt;/div&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

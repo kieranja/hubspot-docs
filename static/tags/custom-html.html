@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Custom HTML</h1>
+
+<p>A custom HTML module allows users to enter raw HTML into the content editor. If you need to add extensive default HTML to the module, you may want to use <a href="/docs/hubl/hubl-module-syntax-and-parameters#block-syntax">block syntax</a>.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% raw_html "raw_html" %}
+{% raw_html "my_custom_html_module" label="Enter HTML here" value='&lt;div&gt;My HTML Block&lt;/div&gt;' %}
+
+
+Block Syntax Example:
+
+{% widget_block raw_html "my_custom_html_module" overrideable=True, label='My custom HTML module'  %}
+        {% widget_attribute "value" %}
+            &lt;div&gt;Default HTML block&lt;/div&gt;
+        {% end_widget_attribute %}
+{% end_widget_block %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span id="hs_cos_wrapper_my_custom_html_module" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" style="" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html"&gt;
+    &lt;div&gt;My HTML block&lt;/div&gt;
+&lt;/span&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>value</td>
+  <td>String</td>
+  <td>Sets the default content HTML of the module.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

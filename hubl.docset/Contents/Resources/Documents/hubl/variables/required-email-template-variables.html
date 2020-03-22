@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Required email template variables</h1>
+
+<p>To be <a href="https://knowledge.hubspot.com/email/can-i-customize-my-can-spam-email-footer">CAN-SPAM </a>compliant, all emails sent through HubSpot require certain company and opt-out information; therefore, HubSpot email templates require certain variables. There are additional email variables that are optional which are listed <a href="#email-variables">further down this page</a>.
+<table>
+<thead>
+<tr>
+  <th>Variable</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>site_settings.company_city</td>
+  <td>String</td>
+  <td>Prints the company city (set in Settings > Marketing > Email > Configuration > Footer).</td>
+</tr>
+<tr>
+  <td>site_settings.company_name</td>
+  <td>String</td>
+  <td>Prints the company name (set in Settings > Marketing > Email > Configuration > Footer).</td>
+</tr>
+<tr>
+  <td>site_settings.company_state</td>
+  <td>String</td>
+  <td>Prints the company state (set in Settings > Marketing > Email > Configuration > Footer).</td>
+</tr>
+<tr>
+  <td>site_settings.company_street_address_1</td>
+  <td>String</td>
+  <td>Prints the company address (set in Settings > Marketing > Email > Configuration > Footer).</td>
+</tr>
+<tr>
+  <td>unsubscribe_link</td>
+  <td>String</td>
+  <td>Prints the URL of the page that allows recipients to manage subscription preferences or unsubscribe from email communications. This variable should be used in the href attribute of an <a>.</td>
+</tr>
+</tbody>
+</table></p>
+
+    </div>
+</body>
+</html>

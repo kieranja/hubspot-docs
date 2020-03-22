@@ -1,0 +1,113 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Logo</h1>
+
+<p>A logo module renders your company's logo image from Content Settings.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% logo "logo" %}
+{% logo "my_logo" width='200' %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span id="hs_cos_wrapper_my_logo" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_logo" style="" data-hs-cos-general-type="widget" data-hs-cos-type="logo"&gt;
+    &lt;a href="//www.hubspot.com" id="hs-link-my_logo"&gt;
+        &lt;img src="//cdn2.hubspot.net/hub/53/file-1237149549-png/assets/hubspot.com/V2-Global/hubspot-logo-dark.png?t=1430948896766&amp;amp;width=200" class="hs-image-widget " width="200" alt="HubSpot logo" title="HubSpo logot"&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>suppress_company_name</td>
+  <td>Boolean</td>
+  <td>Hides company name if an image logo isn't set.</td>
+  <td>False</td>
+</tr>
+<tr>
+  <td>alt</td>
+  <td>String</td>
+  <td>Sets the default alt text for the image.</td>
+  <td>Value in Content Settings</td>
+</tr>
+<tr>
+  <td>src</td>
+  <td>String</td>
+  <td>Populates the src attribute of the img tag.</td>
+  <td>Value in Content Settings</td>
+</tr>
+<tr>
+  <td>width</td>
+  <td>Number</td>
+  <td>Sets the width attribute of the img tag.</td>
+  <td>The width of the image</td>
+</tr>
+<tr>
+  <td>height</td>
+  <td>Number</td>
+  <td>Sets a min-height in a style attribute of the img tag for email templates only.</td>
+  <td>The height of the image</td>
+</tr>
+<tr>
+  <td>hspace</td>
+  <td>Number</td>
+  <td>Sets the hspace attribute of the img tag.</td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| align | String | Sets the align attribute of the img tag. Possible values include: left, right, &amp; center. |</p>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| style | String | Adds inline CSS declarations to the img tag. For example style="border:1px solid blue; margin:10px" |</p>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| open_in_new_tab | Boolean | Selects whether or not to open the destination URL in another tab. | False | 
+| link | String | Sets the destination URL of the link that wraps the img tag. |</p>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| override_inherited_src | Boolean | If true, use src from logo widget rather than src inherited from settings or template. | True |</p>
+
+    </div>
+</body>
+</html>

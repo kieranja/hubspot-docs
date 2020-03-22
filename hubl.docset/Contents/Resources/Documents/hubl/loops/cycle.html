@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>cycle</h1>
+
+<p>The cycle tag can be used within a for loop to cycle through a series of string values and print them with each iteration. One of the most practical applications to this technique is applying alternating classes to your blog posts in a listing. This tag can be used on more than two values and will repeat the cycle if there are more loop iterations than cycle values. In the example below, a class of <code>odd</code> and <code>even</code> are applied to posts in a listing (the example assumes that there are 5 posts in the loop).</p>
+
+<p>Please note that there are <strong>no spaces</strong> between the comma-separated cycle string values.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% for content in contents %}
+    &lt;div class="post-item {% cycle 'odd','even' %}"&gt;Blog post content&lt;/div&gt;
+{% endfor %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;div class="post-item odd"&gt;Blog post content&lt;/div&gt;
+&lt;div class="post-item even"&gt;Blog post content&lt;/div&gt;
+&lt;div class="post-item odd"&gt;Blog post content&lt;/div&gt;
+&lt;div class="post-item even"&gt;Blog post content&lt;/div&gt;
+&lt;div class="post-item odd"&gt;Blog post content&lt;/div&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

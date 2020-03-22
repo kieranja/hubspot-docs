@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Ternary operators</h1>
+
+<p>It is also possible to use ternary operators to quickly write conditional logic with <a href="/docs/hubl/operators-and-expression-tests#logical">operators and expression tests</a>.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">// If the variable is_blue is true, output "blue", otherwise output"red"
+{{ is_blue is truthy ? "blue" : "red" }}
+
+// Set the variable is_red to false if is_blue is true, otherwise set to true
+{% set is_red = is_blue is truthy ? false : true %}
+</code></pre>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>blog_page_link</h1>
+
+<p>The <code>blog_page_link</code> function generates the URL of a paginated view of your blog listing. The function takes a numeric parameter, which allows you to generate links for current, next, previous, or a specific page. This function is generally used in the <code>href</code> attribute of pagination anchor tags and must be used on your blog listing template.</p>
+
+<p>The examples below show this function in use as an anchor <code>href</code>. The first example outputs the current page. The second example takes the number 7 parameter to specify the seventh page. The third example uses the <code>next_page_num</code> variable to generate a link that is relative to the current page number (you can also use the <code>last_page_num</code> variable for the previous page). The final example uses the <code>current_page_num</code> variable and a <code>+</code> operator to create a link that is 4 greater than the current page.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">&lt;a href="{{ blog_page_link(current_page_num) }}"&gt;Current page&lt;/a&gt;
+&lt;a href="{{ blog_page_link(7) }}"&gt;Page 7&lt;/a&gt;
+&lt;a href="{{ blog_page_link(next_page_num) }}"&gt;Next&lt;/a&gt;
+&lt;a href="{{ blog_page_link(current_page_num + 4) }}"&gt;Page Plus 4&lt;/a&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;a href="http://designers.hubspot.com/blog/page/1"&gt;Page 1&lt;/a&gt;
+&lt;a href="http://designers.hubspot.com/blog/page/7"&gt;Page 7&lt;/a&gt;
+&lt;a href="http://designers.hubspot.com/blog/page/2"&gt;Next&lt;/a&gt;
+&lt;a href="http://designers.hubspot.com/blog/page/5"&gt;Page Plus 4&lt;/a&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>page</td>
+  <td>Number or HubL Var</td>
+  <td>Page Number used to generate URL or HubL variable for page number.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Gallery</h1>
+
+<p>Generates a HubSpot gallery module. This gallery module is based on <a href="http://kenwheeler.github.io/slick/">Slick</a>. While you can create a gallery module with standard module HubL syntax, If you want to predefine default slides using HubL, you must use block syntax. Both methods are shown below.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% gallery "crm_gallery" %}
+
+&lt;-- Block syntax --&gt;
+{% widget_block gallery "Gallery" display_mode='standard' sizing='static', transition='slide', caption_position='below', auto_advance=True, overrideable=True, description_text='', show_pagination=True, label='Gallery', loop_slides=True, num_seconds=5  %}
+    {% widget_attribute "slides" is_json=True %}
+        [{
+            "caption": "CRM Contacts App", 
+            "show_caption": true, 
+            "link_url": "http://www.hubspot.com/crm", 
+            "alt_text": "Screenshot of CRM Contacts", 
+            "img_src": "http://go.hubspot.com/hubfs/Contacts-View-1.png?t=1430860504240", 
+            "open_in_new_tab": true
+        }, 
+        {
+            "caption": "HubSpot CRM Contact Profile", 
+            "show_caption": true, 
+            "link_url": "http://www.hubspot.com/", 
+            "alt_text": "HubSpot CRM Contact Profile", 
+            "img_src": "http://cdn2.hubspot.net/hubfs/53/Contact-Profile.png?t=1430860504240", 
+            "open_in_new_tab": true
+        }]
+    {% end_widget_attribute %}
+{% end_widget_block %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span id="hs_cos_wrapper_crm_gallery" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_gallery" style=""
+    data-hs-cos-general-type="widget" data-hs-cos-type="gallery"&gt;
+    &lt;div id="hs_cos_flex_gallery_crm_gallery" class="hs_cos_flex-gallery flex-gallery-main gallery-mode-gallery"&gt;
+        &lt;div class="hs_cos_flex-viewport" style="overflow: hidden; position: relative;"&gt;
+            &lt;ul class="hs_cos_flex-slides hs_cos_flex-slides-main "
+                style="width: 800%; -webkit-transition-duration: 0s; transition-duration: 0s; -webkit-transform: translate3d(-1090px, 0px, 0px);"&gt;
+                &lt;li class="hs_cos_flex-slide-main clone" aria-hidden="true"
+                    style="width: 1090px; float: left; display: block;"&gt;
+                    &lt;a href="//www.hubspot.com/" target="_blank"&gt;&lt;img
+                            src="//cdn2.hubspot.net/hubfs/53/Contact-Profile.png?t=1430860504240&amp;t=1430335520686"
+                            alt="HubSpot CRM Contact Profile" draggable="false"&gt;&lt;/a&gt;
+                    &lt;div class="caption"&gt;
+                        HubSpot CRM Contact Profile
+                    &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="hs_cos_flex-slide-main hs_cos_flex-active-slide"
+                    style="width: 1090px; float: left; display: block;"&gt;
+                    &lt;a href="//www.hubspot.com/crm" target="_blank"&gt;&lt;img
+                            src="http://go.hubspot.com/hubfs/Contacts-View-1.png?t=1430860504240&amp;t=1430335520686"
+                            alt="Screenshot of CRM Contacts" draggable="false"&gt;&lt;/a&gt;
+                    &lt;div class="caption"&gt;
+                        CRM Contacts App
+                    &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="hs_cos_flex-slide-main" style="width: 1090px; float: left; display: block;"&gt;
+                    &lt;a href="//www.hubspot.com/" target="_blank"&gt;&lt;img
+                            src="//cdn2.hubspot.net/hubfs/53/Contact-Profile.png?t=1430860504240&amp;t=1430335520686"
+                            alt="HubSpot CRM Contact Profile" draggable="false"&gt;&lt;/a&gt;
+                    &lt;div class="caption"&gt;
+                        HubSpot CRM Contact Profile
+                    &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class="hs_cos_flex-slide-main clone" aria-hidden="true"
+                    style="width: 1090px; float: left; display: block;"&gt;
+                    &lt;a href="//www.hubspot.com/crm" target="_blank"&gt;&lt;img
+                            src="http://go.hubspot.com/hubfs/Contacts-View-1.png?t=1430860504240&amp;t=1430335520686"
+                            alt="Screenshot of CRM Contacts" draggable="false"&gt;&lt;/a&gt;
+                    &lt;div class="caption"&gt;
+                        CRM Contacts App
+                    &lt;/div&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;ol class="hs_cos_flex-control-nav hs_cos_flex-control-paging"&gt;
+            &lt;li&gt;&lt;a class="hs_cos_flex-active"&gt;1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class=""&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;ul class="hs_cos_flex-direction-nav"&gt;
+            &lt;li&gt;&lt;a class="hs_cos_flex-prev" href="#"&gt;Previous&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="hs_cos_flex-next" href="#"&gt;Next&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        window.hsSliderConfig = window.hsSliderConfig || {};
+        window.hsSliderConfig['crm_gallery'] = {
+            mode: 'gallery',
+            mainConfig: {
+                "animationLoop": true,
+                "direction": "horizontal",
+                "slideshowSpeed": 5000.0,
+                "controlNav": true,
+                "smoothHeight": false,
+                "namespace": "hs_cos_flex-",
+                "slideshow": true,
+                "selector": ".hs_cos_flex-slides &gt; li",
+                "animation": "slide"
+            }
+        };
+    &lt;/script&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>slides</td>
+  <td>JSON</td>
+  <td>A JSON list of the default caption, the link url, the alt text, the image src, and whether to open in a new tab. See block syntax above.</td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| loop_slides | Boolean | When True, continuously loop through slides. | True | 
+| num_seconds | Number | Time in seconds to pause between slides. | 5 | 
+| show_pagination | Boolean | Provide buttons below slider to navigate among slides. | True | 
+| sizing | Enumeration | Determines whether the slider changes sizes, based on the height of the slides. Possible values include: "static" or "resize". | "static" | 
+| auto_advance | Boolean | Automatically advance slides after the time set in num_seconds. | False | 
+| transition | Enumeration | Sets the type of slide transition. Possible values include: "fade" or "slide". | "slide" | 
+| caption_position | Enumeration | Affects positioning of caption on or below the slide. Possible values include "below" or "superimpose". | "below" | 
+| display_mode | Enumeration | Determines how the image gallery will be displayed. Possible values include: "standard", "lightbox", "thumbnail". | "standard" | 
+| lightboxRows | Number | If "display_mode" is set to "lightbox", this parameter will control the number of rows displayed within the lightbox. | 3 |</p>
+
+    </div>
+</body>
+</html>

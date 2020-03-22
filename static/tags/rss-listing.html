@@ -1,0 +1,205 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>RSS listing</h1>
+
+<p>Loads a list of content from an internal or external RSS feed.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% rss_listing "rss_listing" %}
+{% rss_listing "my_rss_listing" rss_url='', publish_date_text='posted at', feed_source={rss_url='', is_external=False, content_group_id='24732847'}, click_through_text='Read more', show_date=True, include_featured_image=True, overrideable=False, publish_date_format='short', show_detail=True, show_author=True, number_of_items='5', is_external=False, title='', content_group_id='24732847', label='RSS Listing', limit_to_chars='200', attribution_text='by' %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span id="hs_cos_wrapper_my_rss_listing" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rss_listing" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rss_listing"&gt;
+    &lt;h3&gt;&lt;/h3&gt;
+    &lt;div class="hs-rss-module feedreader_box"&gt;
+        &lt;div class="hs-rss-item hs-with-featured-image"&gt;
+            &lt;div class="hs-rss-item-text"&gt;
+                &lt;a class="hs-rss-title" href="http://www.underseaband.com/blog/city-where-stars-are-not"&gt;&lt;span&gt;City
+                        Where Stars Are Not&lt;/span&gt;&lt;/a&gt;
+                &lt;div class="hs-rss-byline"&gt;by &lt;span class="hs-rss-author"&gt;Matthew Vincenty&lt;/span&gt;
+                    &lt;span class="hs-rss-posted-at"&gt;posted at&lt;/span&gt; &lt;span class="hs-rss-date"&gt;5/1/15 11:02 AM&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class="hs-rss-description"&gt;
+                    &lt;p&gt; We are pleased to announce the release of our next single "City Where Stars Are Not"! It will be
+                        available Tuesday May 5th and features lead vocals by bassist David Hunt. Thanks to Peter...&lt;a
+                            href="http://www.underseaband.com/blog/city-where-stars-are-not"&gt;Read more&lt;/a&gt; &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="hs-rss-item-image-wrapper"&gt;
+                &lt;img class="hs-rss-featured-image" src="http://www.underseaband.com/hubfs/Blog_Images/citywherestarsarenot.png?t=1430835551915"&gt; 
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="hs-rss-item hs-with-featured-image"&gt;
+            &lt;div class="hs-rss-item-text"&gt;
+                &lt;a class="hs-rss-title" href="http://www.underseaband.com/blog/loud-louder"&gt;&lt;span&gt;New Pedal! ChadderBox
+                        Effects Loud Louder&lt;/span&gt;&lt;/a&gt;
+                &lt;div class="hs-rss-byline"&gt;by &lt;span class="hs-rss-author"&gt;Corey Wade&lt;/span&gt;
+                    &lt;span class="hs-rss-posted-at"&gt;posted at&lt;/span&gt; &lt;span class="hs-rss-date"&gt;4/27/15 10:30 AM&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class="hs-rss-description"&gt;
+                    &lt;p&gt;
+                        I have the good fortune to have recently met Chad from ChadderBox Effects. It turns out he works
+                        part-time on the same floor in the same building where I also work part-time. When I found out
+                        Chad...&lt;a href="http://www.underseaband.com/blog/loud-louder"&gt;Read more&lt;/a&gt; &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="hs-rss-item-image-wrapper"&gt; &lt;img class="hs-rss-featured-image"
+                    src="http://www.underseaband.com/hubfs/Blog_Images/10724991_612551458879970_1563949619_n.jpg?t=1430835551915"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="hs-rss-item hs-with-featured-image"&gt;
+            &lt;div class="hs-rss-item-text"&gt; &lt;a class="hs-rss-title"
+                    href="http://www.underseaband.com/blog/introducing-ariél-torres"&gt;&lt;span&gt;Introducing: Ariél
+                        Torres&lt;/span&gt;&lt;/a&gt;
+                &lt;div class="hs-rss-byline"&gt;by &lt;span class="hs-rss-author"&gt;Corey Wade&lt;/span&gt; &lt;span
+                        class="hs-rss-posted-at"&gt;posted at&lt;/span&gt; &lt;span class="hs-rss-date"&gt;4/24/15 10:30 AM&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class="hs-rss-description"&gt;
+                    &lt;p&gt; Everyone needs to check out Boston-based visual artist Ariél Torres’ work. He was very nice to
+                        let us use one of his pieces for “Your Teeth Shake”, and we couldn’t be more stoked about it.
+                        Check out...&lt;a href="http://www.underseaband.com/blog/introducing-ariél-torres"&gt;Read more&lt;/a&gt;
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="hs-rss-item-image-wrapper"&gt; &lt;img class="hs-rss-featured-image"
+                    src="http://www.underseaband.com/hubfs/tangledupinblue-449270-edited.jpg?t=1430835551915"&gt; &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="hs-rss-item hs-with-featured-image"&gt;
+            &lt;div class="hs-rss-item-text"&gt; 
+                &lt;a class="hs-rss-title" href="http://www.underseaband.com/blog/new-pedal-fuzzrocious-rat-tail"&gt;&lt;span&gt;New Pedal! Fuzzrocious Rat Tail&lt;/span&gt;&lt;/a&gt;
+                &lt;div class="hs-rss-byline"&gt;by &lt;span class="hs-rss-author"&gt;Matthew Vincenty&lt;/span&gt; &lt;span
+                        class="hs-rss-posted-at"&gt;posted at&lt;/span&gt; &lt;span class="hs-rss-date"&gt;4/21/15 4:34 PM&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class="hs-rss-description"&gt;
+                    &lt;p&gt; I found myself in the position of needing to put together a new board to fill in on guitar with
+                        our friends Glacier.&amp;nbsp;First I needed a distortion pedal that could pull of their heavier
+                        bits so I...&lt;a href="http://www.underseaband.com/blog/new-pedal-fuzzrocious-rat-tail"&gt;Read
+                            more&lt;/a&gt; &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="hs-rss-item-image-wrapper"&gt; &lt;img class="hs-rss-featured-image"
+                    src="http://www.underseaband.com/hubfs/Blog_Images/11023171_476701342477661_420938091_n.jpg?t=1430835551915"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="hs-rss-item hs-with-featured-image"&gt;
+            &lt;div class="hs-rss-item-text"&gt; &lt;a class="hs-rss-title"
+                    href="http://www.underseaband.com/blog/using-two-amps"&gt;&lt;span&gt;Using two amps&lt;/span&gt;&lt;/a&gt;
+                &lt;div class="hs-rss-byline"&gt;by &lt;span class="hs-rss-author"&gt;Matthew Vincenty&lt;/span&gt; &lt;span
+                        class="hs-rss-posted-at"&gt;posted at&lt;/span&gt; &lt;span class="hs-rss-date"&gt;4/17/15 3:58 PM&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class="hs-rss-description"&gt;
+                    &lt;p&gt; Sometimes just one amp isn't enough. Using multiple amps together can yield a sound that is more
+                        than the sum of it's parts. Both Corey and myself have split our singal to multiple amps.
+                        Currently...&lt;a href="http://www.underseaband.com/blog/using-two-amps"&gt;Read more&lt;/a&gt; &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="hs-rss-item-image-wrapper"&gt; &lt;img class="hs-rss-featured-image"
+                    src="http://www.underseaband.com/hubfs/Blog_Images/E719C0A7-6C2A-41FB-9A59-FA8236DED4A5.jpg?t=1430835551915"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/span&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>show_title</td>
+  <td>Boolean</td>
+  <td> Shows or hides RSS feed title.</td>
+  <td>True</td>
+</tr>
+<tr>
+  <td>show_date</td>
+  <td>Boolean</td>
+  <td>Displays post date.</td>
+  <td>True</td>
+</tr>
+<tr>
+  <td>show_author</td>
+  <td>Boolean</td>
+  <td>Displays author name.</td>
+  <td>True</td>
+</tr>
+<tr>
+  <td>show_detail</td>
+  <td>Boolean</td>
+  <td>Display post summary up to number of characters set by limit_to_chars parameter.</td>
+  <td>True</td>
+</tr>
+<tr>
+  <td>title</td>
+  <td>String</td>
+  <td>Populates a heading above the RSS feed listing.</td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| limit_to_chars | Number | Maximum number of characters to display in summary. | 200 | 
+| publish_date_format | String | Format for the publish date. Possible values include 'short', 'medium' and 'long'. Also accepts custom formats including "MMMM d, yyyy 'at' h:mm a". | 'short' | 
+| attribution_text | String | The text which attributes an author to a post. | 'by' | 
+| click_through_text | String | The text which will be displayed for the click through link at the end of a post summary. | 'Read more' | 
+| publish_date_text | String |  The text which indicates when a post was published. | 'posted at' | 
+| include_featured_image | Boolean | Displays featured image with post link for HubSpot generated RSS feeds. | False | 
+| item_title_tag | String | Specifies HTML tag of each post title. | span | 
+| is_external | Boolean | RSS feed is from an external blog. | False | 
+| number_of_items | Number | Maximum number of posts to display. | 5 | 
+| publish_date_language | String | Specifies the language of the publish date. | en_US | 
+| rss_url | String |  The URL where the RSS feed is located. |</p>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| content_group_id | String | ID for blog when feed source is internal blog. |</p>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| select_blog | String | Can be used to select an internal HubSpot blog feed. | default | 
+| feed_source | String | Set source for RSS feed. When internal, general format is {rss_url='', is_external=False, content_group_id='2502431580'}. When external, general format is {rss_url='http://blog.hubspot.com/marketing/rss.xml', is_external=True}. |</p>
+
+<pre><code>       | 
+</code></pre>
+
+<p>| tag_id | Number | ID for tag when feed source is internal blog. |</p>
+
+<pre><code>       | 
+</code></pre>
+
+    </div>
+</body>
+</html>

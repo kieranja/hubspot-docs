@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>capitalize</h1>
+
+<p>Capitalize the first letter of a variable value. The first character will be uppercase, all others letters will retain their original case.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set sentence = "the first letter of a sentence should always be capitalized." %} 
+{{ sentence|capitalize }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">The first letter of a sentence should always be capitalized.
+</code></pre>
+
+    </div>
+</body>
+</html>

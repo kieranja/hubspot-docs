@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>hubdb_table_row</h1>
+
+<p>For a comprehensive overview of HubDB, read our <a href="/docs/features/hubdb">HubDB page </a>in the CMS Developer tools section.</p>
+
+<p>The <code>hubdb_table_row</code> function can be used to pull a single row from a HubDB table. From this row, you can pull information from each table cell by calling on the corresponding attribute:</p>
+
+<p>(Built-in and custom column names are case insensitive. HS&#95;ID will work the same as hs&#95;id)</p>
+
+<ul>
+<li><code>hs_id</code> - the globally unique id for this row</li>
+<li><code>hs_created_at</code> - a timestamp representing when this row was created</li>
+<li><code>hs_path</code> - when used with dynamic pages, this string is the last segment of the url's path for the page</li>
+<li><code>hs_name</code> - when used with dynamic pages, this is the title of the page</li>
+<li>`` or <code>[""]</code> - Get the value of the column for this row by the <code>name</code> of the column</li>
+</ul>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set row = hubdb_table_row(1548264, 6726439331)  %} 
+{{ row.role  }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">CTO
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>table_id</td>
+  <td>String</td>
+  <td>Id or name of the table.</td>
+</tr>
+<tr>
+  <td>row_id</td>
+  <td>Integer</td>
+  <td>Id of the row of the table.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

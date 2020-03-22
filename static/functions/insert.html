@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>insert</h1>
+
+<p>Places an element into a list at the specific index provided.</p>
+
+<p>This function accepts 2 parameters:</p>
+
+<ul>
+<li><code>Index</code>: the position where an element is to be inserted</li>
+<li><code>Element</code>: the item to be inserted</li>
+</ul>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set even_numbers = [2,4,8,10]  %}
+{% do even_numbers.insert(2,6) %}
+{{even_numbers}}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">[2, 4, 6, 8, 10]
+</code></pre>
+
+    </div>
+</body>
+</html>

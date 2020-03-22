@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Website pages variables</h1>
+
+<p>The following variables are available for site pages, landing pages, system pages, and blogs.
+<table>
+<thead>
+<tr>
+  <th>Variable</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>builtin_body_classes</td>
+  <td>String</td>
+  <td>This variable dynamicaly prints helpful classes that help differentiate the markup of content created with that template (ie type of content, content name, etc). This makes styling different types of content or particular pages easier. This variable should be used in the class attribute of the body tag on coded templates.</td>
+</tr>
+<tr>
+  <td>request_contact.is_logged_in</td>
+  <td>String</td>
+  <td>This variable defines whether or not the requesting contact is logged in to a website's gated content (see control audience access documentation for further information). The value of this variable will return true if the requesting contact is logged in, and false if the requesting contact has logged out. A contact can be logged out by directing them to the URL https://www.yourdomain.com/_hcms/mem/logout.Use of this variable will disable page caching. </td>
+</tr>
+<tr>
+  <td>request_contact.list_memberships</td>
+  <td>String</td>
+  <td>This variable returns a dict of ids that represents the lists of which the contact is a member.Use of this variable will disable page caching. </td>
+</tr>
+<tr>
+  <td>content.language</td>
+  <td>Dict</td>
+  <td>This variable returns a dict of information about the language settings of a page. {{ content.language.languageTag }} returns the language identifier of a page (i.e. "en" or "es"). {{ content.language.textDirection }} returns the text direction of the language of the page (i.e. "rtl" or "ltr").</td>
+</tr>
+</tbody>
+</table></p>
+
+    </div>
+</body>
+</html>

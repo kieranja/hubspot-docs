@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>index</h1>
+
+<p>Returns the location of the first matching item in a 0 based <code>array</code>.</p>
+
+<p>This function accepts 3 parameters, The first parameter is required. The first parameter is the item you are trying to find in the <code>array</code>. The second (<code>start</code>) and third (<code>end</code>) enable you to find that item in a slice of the <code>array</code>.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set shapes = ["triangle","square","trapezoid","triangle"] %}
+triangle index: {{shapes.index("triangle")}} &lt;br&gt;
+trapezoid index: {{shapes.index("trapezoid")}}
+&lt;hr&gt;
+adjusted start and end &lt;br&gt;
+triangle index: {{shapes.index("triangle",1,5)}}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">triangle index: 0&lt;br&gt;
+trapezoid index: 2
+&lt;hr&gt;
+adjusted start and end&lt;br&gt;
+triangle index: 3
+</code></pre>
+
+    </div>
+</body>
+</html>

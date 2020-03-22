@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Variables</h1>
+
+<p>Variables are either a single word in an expression or an attribute of a dictionary. HubL uses Python-based data structures called dictionaries or <strong>dicts</strong> to store various sets of variables. For example, HubSpot uses a dictionary "content" to house many attributes that pertain to the content created with that template. For example the <code>content.absolute_url</code> prints the URL of the specific piece of content.</p>
+
+<p>HubSpot has many predefined variables that can be used throughout your page, blog, and email templates. You can see a complete reference list of supported variables, <a href="/docs/hubl/variables">here</a>. You can also view the <a href="/docs/developer-reference/debugging-and-errors#developer-info">developer info</a> when browsing any page from your portal.</p>
+
+<p>In addition to printing the values of variables and dictionary attributes in a template, you can also define your own variables. You can store strings, booleans, integers, sequences, or create dictionaries within a single variable. Variables are defined within statement delimiters using the word "set". Once stored, variables can then be printed by stating the variable name as an expression. Below you can see various types of information stored in variables and then printed.</p>
+
+<p>Variables should either be single words or use underscores for spaces (ie my&#95;variable). <strong>HubL does not support hyphenated variable names.</strong></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set string_var = "This is a string value stored in a variable" %}
+{{ string_var}}
+
+{% set bool_var = True %}
+{{ bool_var}}
+
+{% set int_var = 53 %}
+{{ int_var}}
+
+{% set seq_var = ['Item 1', 'Item 2', 'Item 3'] %}
+{{ seq_var}}
+
+{% set var_one = "String 1" %}
+{% set var_two = "String 2" %}
+{% set sequence = [var_one,  var_two] %}
+{{ sequence }}
+
+{% set dict_var = {'name': 'Item Name', 'price': '$20', 'size':'XL'} %}
+{{ dict_var.price }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">This is a string value stored in a variable
+
+True
+
+53
+
+[Item1, Item2, Item3]
+
+[String 1, String 2]
+
+$20
+</code></pre>
+
+<p>Each example above stores a different type of variable, with the final example storing two different variables in a sequence.</p>
+
+<p>In addition to printing values, variables can be used in <a href="/docs/hubl/if-statements">if statements</a>, as <a href="/docs/hubl/filters">filter</a> parameters, as <a href="/docs/hubl/functions">function</a> parameters, as well as iterated through with <a href="/docs/hubl/for-loops">for loops</a> (sequence variables only).</p>
+
+<p>One common usage is to use variables to define common CSS values in your stylesheet. For example, if you have a color that you use over and over again throughout your CSS file. That way, if you need to change that color, you can change the variable value, and all references to that variable will be updated, the next time that you publish the file.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">&lt;!-- defines variable and assigns HEX color --&gt;
+{% set primaryColor = '#F7761F' %} 
+
+a {
+    color: {{ primaryColor }}; {# prints variable HEX value #}
+} 
+</code></pre>
+
+    </div>
+</body>
+</html>

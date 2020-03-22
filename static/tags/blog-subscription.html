@@ -1,0 +1,96 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Blog subscription</h1>
+
+<p>A blog subscription module renders the blog subscriber form for a particular blog. This form is automatically created whenever a blog is created in Content Settings, and there is always one subscription form per blog. Please note that the subscribe form's fields are configured within the Forms editor UI.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% blog_subscribe "blog_subscribe" %}
+{% blog_subscribe "subscribe_designers_blog" select_blog='default', title='Subscribe to the Designers Blog', response_message='Thanks for Subscribing!', label='Blog Email Subscription', overrideable=False %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span id="hs_cos_wrapper_blog_subscription" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_blog_subscribe" style="" data-hs-cos-general-type="widget" data-hs-cos-type="blog_subscribe"&gt;
+&lt;h3 id="hs_cos_wrapper_blog_subscription_title" class="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text"&gt;Subscribe to Designers Blog&lt;/h3&gt;
+&lt;div id="hs_form_target_blog_subscription"&gt;&lt;/div&gt;
+&lt;script charset="utf-8" src="//js.hsforms.net/forms/current.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+hbspt.forms.create({ portalId: '327485', formId: 'a8d73dc6-0d3a-486d-8938-b19f28b69c3c', formInstanceId: '60', pageId: 2749976739, pageName: 'Apple, Google &amp; Starbucks: Inside the Web Design Style Guides of 10 Famous Companies', redirectUrl: 'http://designers.hubspot.com/blog/web-design-style-guides-examples?hsFormKey=a56a754bc4c3465015935953363b8ff3#blog_subscription', css: '', target: '#hs_form_target_blog_subscription', formData: { cssClass: 'hs-form stacked' } });
+&lt;/script&gt;
+&lt;/span&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>select_blog</td>
+  <td>'default' or blog ID</td>
+  <td>Selects which blog subscription form to render. This parameter accepts arguments of either 'default' or a blog ID (available in the URL of the Blog dashboard). If want to use your default blog, this parameter is unnecessary.</td>
+  <td>default</td>
+</tr>
+<tr>
+  <td>title</td>
+  <td>String</td>
+  <td>Defines text in an h3 tag title above the subscribe form.</td>
+  <td>"Subscribe Here!"</td>
+</tr>
+<tr>
+  <td>no_title</td>
+  <td>Boolean</td>
+  <td>If True, the h3 tag above the title is removed.</td>
+  <td>false</td>
+</tr>
+<tr>
+  <td>response_message</td>
+  <td>String</td>
+  <td>Defines the inline thank-you message that is rendered when a user submits a form. Supports HTML.</td>
+  <td>"Thanks for Subscribing!"</td>
+</tr>
+<tr>
+  <td>edit_form_link</td>
+  <td>String</td>
+  <td>This parameter generates a link that allows users to click through to the corresponding Form editor screen. This option will only show in the editor UI if the modules has the parameter overrideable=True. Here is an example where HubID and form ID would be replaced with the information from the URL of your default blog subscriber form: edit_form_link='</td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+
+<ul>\n <li><a href="/forms/HubID/FormID/edit/" target="_blank">Default Blog</a></li> \n</ul>
+
+<p>'. \n drops the code onto a new line. |</p>
+
+<pre><code>       | 
+</code></pre>
+
+    </div>
+</body>
+</html>

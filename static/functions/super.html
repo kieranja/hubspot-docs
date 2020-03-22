@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>super</h1>
+
+<p>Super prints content from the parent template into a child template, when you have created parent and children templates, using the extends tag. For example in the code below, a basic HTML template has been created with a HubL block named "sidebar" and saved as parent.html. A second template file is created that will extend that parent file. Normally the &lt;h3&gt; would be printed in the parent HTML's sidebar block. But by using super, content from the parent template sidebar block is combined with the content from the child template.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% extends "custom/page/web_page_basic/parent.html" %}
+
+{% block sidebar %}
+    &lt;h3&gt;Table Of Contents&lt;/h3&gt;
+    {{ super() }}
+{% endblock %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;This is the parent template &lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+             &lt;h3&gt;Table of contents&lt;/h3&gt;
+            Sidebar content from parent.
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

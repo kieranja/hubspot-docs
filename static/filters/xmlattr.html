@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>xmlattr</h1>
+
+<p>Create an HTML/XML attribute string, based on the items in a dict. All values that are neither none<br />
+nor undefined are automatically escaped. It automatically prepends a space in front of the item if the filter returned something unless the first parameter is false.
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>autospace <code>Required</code></td>
+  <td>Boolean value that will automatically prepend a space in front of the item unless set to false.</td>
+</tr>
+</tbody>
+</table></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set html_attributes = {'class': 'bold', 'id': 'sidebar'} %}
+&lt;div {{ html_attributes|xmlattr }}&gt;&lt;/div&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;div class="bold" id="sidebar"&gt;&lt;/div&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>truncatehtml</h1>
+
+<p>Truncates a given string, respecting html markup (i.e. will properly close all nested tags). This will prevent a tag from being remaining open after truncation. HTML characters do not count towards the character total. This filter has a length parameter and a truncation symbol parameter. There is a third boolean parameter that specifies whether words will be broken at length. This parameter is false by default in order to preserve the length of words.
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>number_of_characters <code>Required</code></td>
+  <td>Number of characters to truncate the text by. Default is 255.</td>
+</tr>
+<tr>
+  <td>end <code>Optional</code></td>
+  <td>Override the default '...' trailing characters after the truncation.</td>
+</tr>
+<tr>
+  <td>breakword <code>Optional</code></td>
+  <td>Boolean value. If true, the filter will cut the text at length. If false, it will discard the last wrod. </td>
+</tr>
+</tbody>
+</table></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set html_text = "&lt;p&gt;I want to truncate this text without breaking my HTML&lt;p&gt;" %} 
+{{ html_text|truncatehtml(28, '..' , false) }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;p&gt;I want to truncate this..&lt;/p&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

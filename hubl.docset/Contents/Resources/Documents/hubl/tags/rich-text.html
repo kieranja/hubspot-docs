@@ -1,0 +1,98 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Rich text</h1>
+
+<p>Creates a WYSIWYG content editor.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% rich_text "rich_text" %}
+{% rich_text "left_column" label="Enter HTML here" html='&lt;div&gt;My rich text default content&lt;/div&gt;' %}
+
+
+Block Syntax Example:
+
+
+{% widget_block rich_text "right_column" overrideable=True, label='Right Column'  %}
+    {% widget_attribute "html" %}
+            &lt;h2&gt;Something Powerful&lt;/h2&gt;
+            &lt;h3&gt;Tell The Reader More&lt;/h3&gt;
+            &lt;p&gt;The headline and subheader tells us what you're offering, and the form header closes the deal. Over here you can explain why your offer is so great it's worth filling out a form for.&lt;/p&gt;
+            &lt;p&gt;Remember:&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Bullets are great&lt;/li&gt;
+                &lt;li&gt;For spelling out &lt;a href="#"&gt;benefits&lt;/a&gt; and&lt;/li&gt;
+                &lt;li&gt;Turning visitors into leads.&lt;/li&gt;
+            &lt;/ul&gt;
+    {% end_widget_attribute %}
+{% end_widget_block %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span id="hs_cos_wrapper_right_column" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"&gt;
+    &lt;h2&gt;Something Powerful&lt;/h2&gt;
+    &lt;h3&gt;Tell The Reader More&lt;/h3&gt;
+    &lt;p&gt;The headline and subheader tells us what you're offering, and the form header closes the deal. Over here you can explain why your offer is so great it's worth filling out a form for.&lt;/p&gt;
+    &lt;p&gt;Remember:&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Bullets are great&lt;/li&gt;
+        &lt;li&gt;For spelling out benefits and&lt;/li&gt;
+        &lt;li&gt;Turning visitors into leads.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/span&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>html</td>
+  <td>String</td>
+  <td>Default rich text content for module.</td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+
+<h2>Something Powerful</h2>
+
+<h3>Tell The Reader More</h3>
+
+<p>The headline and subheader tells us what you're offering, and the form header closes the deal. Over here you can explain why your offer is so great it's worth filling out a form for.</p>
+
+<p>Remember:</p>
+
+<ul> <li>Bullets are great</li> <li>For spelling out <a href="#">benefits</a> and</li> <li>Turning visitors into leads.</li> </ul>
+
+<p>|</p>
+
+    </div>
+</body>
+</html>

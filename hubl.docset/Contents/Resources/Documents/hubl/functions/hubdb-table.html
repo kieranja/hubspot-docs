@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>hubdb_table</h1>
+
+<p>For a comprehensive overview of HubDB, read our <a href="/docs/features/hubdb">HubDB page </a>in the CMS Developer tools section.</p>
+
+<p>The <code>hubdb_table</code> function can be used to get information on a table including its name, columns, last updated, etc.</p>
+
+<p>The following pieces of information can be pulled by calling the appropriate attributes:</p>
+
+<ul>
+<li><code>id</code> - the ID of the table</li>
+<li><code>name</code> - the name of the table</li>
+<li><code>columns</code> - a list of column information</li>
+<li><code>created_at</code> - timestamp of when this table was first created</li>
+<li><code>published_at</code> - timestamp of when this table was published</li>
+<li><code>updated_at</code> - timestamp of when this table was last updated</li>
+<li><code>row_count</code> - the number of rows in the table</li>
+</ul>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set table_info = hubdb_table(1548215) %} 
+{{ table_info.row_count }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">25
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>table_id</td>
+  <td>String</td>
+  <td>Id or name of the table.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

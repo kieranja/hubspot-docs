@@ -1,0 +1,63 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>replace</h1>
+
+<p>Replace all instances of a substring with a new one.
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>old <code>Required</code></td>
+  <td>The substring that should be replaced.</td>
+</tr>
+<tr>
+  <td>new <code>Required</code></td>
+  <td>Replacement string.</td>
+</tr>
+<tr>
+  <td>count <code>Optional</code></td>
+  <td>If provided, only the firstcount occurrences are replaced.</td>
+</tr>
+</tbody>
+</table></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% if topic %}
+&lt;h3&gt;Posts about {{ page_meta.html_title|replace('Blog | ', '') }}&lt;/h3&gt;
+{% endif %}
+
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;h3&gt;Posts about topic name&lt;/h3&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

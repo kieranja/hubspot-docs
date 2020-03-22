@@ -1,0 +1,245 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Blog comments</h1>
+
+<p>A blog comments module renders the comments embed code on a blog template. This Javascript embed code loads the comments form and comments, based upon your configuration in Content Settings.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">Blog Comment Form module:
+{% blog_comments "blog_comments" overrideable=False, label='Blog Comments' %}
+
+Blog Comment Count module:
+{% blog_comments "blog_comments" %}
+
+Blog Comment listing for specific blog:
+{% blog_comments "default_blog_comments" select_blog='359485112' %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">Blog Commment Form Output:
+&lt;span id="hs_cos_wrapper_blog_comments" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_blog_comments"
+    style="" data-hs-cos-general-type="widget" data-hs-cos-type="blog_comments"&gt;
+    &lt;div class="section post-footer"&gt;
+        &lt;div id="comments-listing" class="new-comments no-comments"&gt;&lt;/div&gt;
+        &lt;div id="hs-comment-embed" style="display:none;"&gt;&lt;/div&gt;
+        &lt;div id="comment-form" class="new-comments"&gt;
+            &lt;form novalidate="" accept-charset="UTF-8"
+                action="https://api.hubapi.com/comments/v3/comment?portalId=311600" enctype="multipart/form-data"
+                id="hsForm_d30edada-82e4-4a69-aaf4-a9d0376f37e6" method="POST" class="hs-form stacked"
+                data-form-id="d30edada-82e4-4a69-aaf4-a9d0376f37e6" data-portal-id="311600"
+                data-reactid=".hbspt-forms-0"&gt;
+                &lt;div data-reactid=".hbspt-forms-0.0:$0"&gt;
+                    &lt;div class="hs_email field hs-form-field" data-reactid=".hbspt-forms-0.0:$0.$email"&gt;
+                        &lt;label class="" placeholder="Enter your Email" for="email-d30edada-82e4-4a69-aaf4-a9d0376f37e6"
+                            data-reactid=".hbspt-forms-0.0:$0.$email.0"&gt;
+                            &lt;span data-reactid=".hbspt-forms-0.0:$0.$email.0.0"&gt;Email&lt;/span&gt;&lt;span
+                                class="hs-form-required" data-reactid=".hbspt-forms-0.0:$0.$email.0.1"&gt;*&lt;/span&gt;
+                        &lt;/label&gt;
+                        &lt;legend class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.0:$0.$email.1"&gt;
+                        &lt;/legend&gt;
+                        &lt;div class="input" data-reactid=".hbspt-forms-0.0:$0.$email.$email"&gt;
+                            &lt;input id="email-d30edada-82e4-4a69-aaf4-a9d0376f37e6" class="hs-input" type="email"
+                                name="email" required="" placeholder="" value=""
+                                data-reactid=".hbspt-forms-0.0:$0.$email.$email.0"&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div data-reactid=".hbspt-forms-0.0:$1"&gt;
+                    &lt;div class="hs_website field hs-form-field" data-reactid=".hbspt-forms-0.0:$1.$website"&gt;
+                        &lt;label class="" placeholder="Enter your Website"
+                            for="website-d30edada-82e4-4a69-aaf4-a9d0376f37e6"
+                            data-reactid=".hbspt-forms-0.0:$1.$website.0"&gt;
+                            &lt;span data-reactid=".hbspt-forms-0.0:$1.$website.0.0"&gt;Website&lt;/span&gt;
+                        &lt;/label&gt;
+                        &lt;legend class="hs-field-desc" style="display:none;"
+                            data-reactid=".hbspt-forms-0.0:$1.$website.1"&gt;&lt;/legend&gt;
+                        &lt;div class="input" data-reactid=".hbspt-forms-0.0:$1.$website.$website"&gt;
+                            &lt;input id="website-d30edada-82e4-4a69-aaf4-a9d0376f37e6" class="hs-input" type="text"
+                                name="website" value="" placeholder=""
+                                data-reactid=".hbspt-forms-0.0:$1.$website.$website.0"&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div data-reactid=".hbspt-forms-0.0:$2"&gt;
+                    &lt;div class="hs_comment field hs-form-field" data-reactid=".hbspt-forms-0.0:$2.$comment"&gt;
+                        &lt;label class="" placeholder="Enter your Comment"
+                            for="comment-d30edada-82e4-4a69-aaf4-a9d0376f37e6"
+                            data-reactid=".hbspt-forms-0.0:$2.$comment.0"&gt;
+                            &lt;span data-reactid=".hbspt-forms-0.0:$2.$comment.0.0"&gt;Comment&lt;/span&gt;
+                            &lt;span class="hs-form-required" data-reactid=".hbspt-forms-0.0:$2.$comment.0.1"&gt;*&lt;/span&gt;
+                        &lt;/label&gt;
+                        &lt;legend class="hs-field-desc" style="display:none;"
+                            data-reactid=".hbspt-forms-0.0:$2.$comment.1"&gt;&lt;/legend&gt;
+                        &lt;div class="input" data-reactid=".hbspt-forms-0.0:$2.$comment.$comment"&gt;
+                            &lt;textarea id="comment-d30edada-82e4-4a69-aaf4-a9d0376f37e6" class="hs-input" name="comment"
+                                required="" placeholder=""
+                                data-reactid=".hbspt-forms-0.0:$2.$comment.$comment.0"&gt;&lt;/textarea&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div data-reactid=".hbspt-forms-0.0:$3"&gt;
+                    &lt;div class="hs_subscribe field hs-form-field" data-reactid=".hbspt-forms-0.0:$3.$subscribe"&gt;
+                        &lt;label class="" placeholder="Enter your Subscribe to follow-up comments for this post"
+                            for="subscribe-d30edada-82e4-4a69-aaf4-a9d0376f37e6"
+                            data-reactid=".hbspt-forms-0.0:$3.$subscribe.0"&gt;
+                            &lt;span data-reactid=".hbspt-forms-0.0:$3.$subscribe.0.0"&gt;&lt;/span&gt;
+                        &lt;/label&gt;
+                        &lt;legend class="hs-field-desc" style="display:none;"
+                            data-reactid=".hbspt-forms-0.0:$3.$subscribe.1"&gt;&lt;/legend&gt;
+                        &lt;div class="input" data-reactid=".hbspt-forms-0.0:$3.$subscribe.$subscribe"&gt;
+                            &lt;ul class="inputs-list" data-reactid=".hbspt-forms-0.0:$3.$subscribe.$subscribe.0"&gt;
+                                &lt;li class="hs-form-booleancheckbox"
+                                    data-reactid=".hbspt-forms-0.0:$3.$subscribe.$subscribe.0.0"&gt;
+                                    &lt;label for="subscribe-d30edada-82e4-4a69-aaf4-a9d0376f37e6"
+                                        class="hs-form-booleancheckbox-display"
+                                        data-reactid=".hbspt-forms-0.0:$3.$subscribe.$subscribe.0.0.0"&gt;
+                                        &lt;input id="subscribe-d30edada-82e4-4a69-aaf4-a9d0376f37e6" class="hs-input"
+                                            type="checkbox" name="subscribe" value="true"
+                                            data-reactid=".hbspt-forms-0.0:$3.$subscribe.$subscribe.0.0.0.0"&gt;
+                                        &lt;span data-reactid=".hbspt-forms-0.0:$3.$subscribe.$subscribe.0.0.0.1"&gt;Subscribe
+                                            to follow-up comments for this post&lt;/span&gt;
+                                    &lt;/label&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div data-reactid=".hbspt-forms-0.0:$4"&gt;
+                    &lt;div class="hs_lifecyclestage field hs-form-field" style="display:none;"
+                        data-reactid=".hbspt-forms-0.0:$4.$lifecyclestage"&gt;
+                        &lt;label class="" placeholder="Enter your Lifecycle Stage"
+                            for="lifecyclestage-d30edada-82e4-4a69-aaf4-a9d0376f37e6"
+                            data-reactid=".hbspt-forms-0.0:$4.$lifecyclestage.0"&gt;
+                            &lt;span data-reactid=".hbspt-forms-0.0:$4.$lifecyclestage.0.0"&gt;Lifecycle Stage&lt;/span&gt;
+                        &lt;/label&gt;
+                        &lt;legend class="hs-field-desc" style="display:none;"
+                            data-reactid=".hbspt-forms-0.0:$4.$lifecyclestage.1"&gt;&lt;/legend&gt;
+                        &lt;div class="input" data-reactid=".hbspt-forms-0.0:$4.$lifecyclestage.$lifecyclestage"&gt;
+                            &lt;input name="lifecyclestage" class="hs-input" type="hidden" value="subscriber"
+                                data-reactid=".hbspt-forms-0.0:$4.$lifecyclestage.$lifecyclestage.0"&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="hs_submit" data-reactid=".hbspt-forms-0.2"&gt;
+                    &lt;div class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.2.0"&gt;&lt;/div&gt;
+                    &lt;div class="actions" data-reactid=".hbspt-forms-0.2.1"&gt;
+                        &lt;input type="submit" value="Submit Comment" class="hs-button primary"
+                            data-reactid=".hbspt-forms-0.2.1.0"&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;input name="hs_context" type="hidden"
+                    value="{&amp;quot;rumScriptExecuteTime&amp;quot;:1396.815,&amp;quot;rumServiceResponseTime&amp;quot;:7737.500000000001,&amp;quot;rumFormRenderTime&amp;quot;:187.17999999999938,&amp;quot;rumTotalRenderTime&amp;quot;:7738.14,&amp;quot;rumTotalRequestTime&amp;quot;:183.2549999999992,&amp;quot;pageUrl&amp;quot;:&amp;quot;http://311600.hs-sites.com/-temporary-slug-5eccb1d9-1f1b-4bbd-8e19-00e198331b15?hs_preview=ALicr-ma-4312320350&amp;quot;,&amp;quot;pageTitle&amp;quot;:&amp;quot;HubSpot Sales Professional User Guide: HubSpot Sales Professional Overview&amp;quot;,&amp;quot;source&amp;quot;:&amp;quot;FormsNext-static-1.390&amp;quot;,&amp;quot;isHostedOnHubspot&amp;quot;:true,&amp;quot;timestamp&amp;quot;:1479135449193,&amp;quot;userAgent&amp;quot;:&amp;quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36&amp;quot;,&amp;quot;referrer&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;hutk&amp;quot;:&amp;quot;a525e671c25f6b108d25e08c892e359e&amp;quot;,&amp;quot;originalEmbedContext&amp;quot;:{&amp;quot;portalId&amp;quot;:&amp;quot;311600&amp;quot;,&amp;quot;formId&amp;quot;:&amp;quot;d30edada-82e4-4a69-aaf4-a9d0376f37e6&amp;quot;,&amp;quot;target&amp;quot;:&amp;quot;#comment-form&amp;quot;,&amp;quot;redirectUrl&amp;quot;:&amp;quot;http://www.hubspot.com/contact-sales/thanks/&amp;quot;,&amp;quot;pageId&amp;quot;:&amp;quot;23423&amp;quot;,&amp;quot;pageName&amp;quot;:&amp;quot;My great landing page&amp;quot;,&amp;quot;css&amp;quot;:&amp;quot;.your-custom-css {background-color: #fe7722}&amp;quot;,&amp;quot;requiredCss&amp;quot;:&amp;quot;.my-custom-error-msgs {border-radius: 3px;}&amp;quot;,&amp;quot;submitButtonClass&amp;quot;:&amp;quot;hs-button primary&amp;quot;},&amp;quot;recentFieldsCookie&amp;quot;:{},&amp;quot;pageId&amp;quot;:&amp;quot;23423&amp;quot;,&amp;quot;pageName&amp;quot;:&amp;quot;My great landing page&amp;quot;,&amp;quot;boolCheckBoxFields&amp;quot;:&amp;quot;subscribe&amp;quot;,&amp;quot;dateFields&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;redirectUrl&amp;quot;:&amp;quot;http://www.hubspot.com/contact-sales/thanks/&amp;quot;,&amp;quot;smartFields&amp;quot;:{},&amp;quot;urlParams&amp;quot;:{&amp;quot;hs_preview&amp;quot;:&amp;quot;ALicr-ma-4312320350&amp;quot;},&amp;quot;formValidity&amp;quot;:{},&amp;quot;correlationId&amp;quot;:&amp;quot;55d71532-ab6b-4415-98f5-f3a16d7741c9&amp;quot;,&amp;quot;disableCookieSubmission&amp;quot;:false}"
+                    data-reactid=".hbspt-forms-0.3"&gt;
+                &lt;input type="hidden" id="id_portalId" name="portalId" value="311600"&gt;&lt;input type="hidden"
+                    id="id_contentId" name="contentId" value="4312320350"&gt;
+                &lt;input type="hidden" id="id_collectionId" name="collectionId" value="2224463151"&gt;
+                &lt;input type="hidden" id="id_contentAuthorEmail" name="contentAuthorEmail"
+                    value="cstone@hubspot.com"&gt;&lt;input type="hidden" id="id_contentAuthorName" name="contentAuthorName"
+                    value="Christopher Stone"&gt;
+                &lt;input type="hidden" id="id_comment_verification_text" name="comment_verification_text"
+                    value="Your comment has been received."&gt;
+                &lt;input type="hidden" id="id_contentTitle" name="contentTitle"
+                    value="HubSpot Sales Professional User Guide: HubSpot Sales Professional Overview"&gt;
+                &lt;input type="hidden" id="id_contentPermalink" name="contentPermalink"
+                    value="http://311600.hs-sites.com/-temporary-slug-5eccb1d9-1f1b-4bbd-8e19-00e198331b15"&gt;
+                &lt;input type="hidden" id="id_contentCreatedAt" name="contentCreatedAt" value="1479135208000"&gt;
+                &lt;input type="hidden" id="id_formGuid" name="formGuid" value="d30edada-82e4-4a69-aaf4-a9d0376f37e6"&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/span&gt;
+
+Blog Comment Listing Module Output:
+
+(function ($) {
+    var commentsEmbedContext = {
+        portalId: 327485,
+        collectionId: 359485112,
+        contentId: 2684120609,
+        target: '#comments-listing.new-comments',
+        showComments: true,
+        showForm: true,
+        commentVerificationText: "Your comment has been received.",
+        embedScriptEnv: "prod",
+        apiEnv: "prod",
+        contentTitle: "Post title",
+        contentCreatedAt: "1427849160000",
+        contentPermalink: "http:\/\/designers.hubspot.com\/blog\/post-name,
+        contentAuthorEmail: "dhunt@hubspot.com",
+        contentAuthorName: "David Hunt",
+        captchaRequired: true,
+        captchaKey: "6Lc3uMsSAAAAAMjk4NIvPQK9_-ZLk2wBokFCo5Qt",
+        maxThreadDepth: 3,
+        formId: "8d42bb92-241b-4894-b853-1d5f6553daa0"
+    };
+
+    function loadComments() {
+        if (window.hubspot &amp;&amp; typeof window.hubspot.loadCommentsEmbed === 'function') {
+            hubspot.loadCommentsEmbed(commentsEmbedContext.embedScriptEnv, function () {
+                if (typeof window.hsEmbedComments === 'function') {
+                    window.hsEmbedComments(commentsEmbedContext);
+                }
+            });
+        } else {
+            setTimeout(loadComments, 50);
+        }
+    }
+    loadComments();
+})(window.hsjQuery || jQuery);
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>limit</td>
+  <td>Integer</td>
+  <td>Sets maximum number of comments.</td>
+  <td>5000</td>
+</tr>
+<tr>
+  <td>select_blog</td>
+  <td>'default' or blog ID</td>
+  <td>Specifies which blog is connected to the comments embed. This parameter accepts arguments of either 'default' or a blog ID (available in the URL of the Blog dashboard). If want to use your default blog, this parameter is unnecessary.</td>
+  <td>default</td>
+</tr>
+<tr>
+  <td>skip_css</td>
+  <td>Boolean</td>
+  <td>Setting this option to True will stop the blog comments CSS from loading. </td>
+  <td>false</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

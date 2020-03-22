@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>truncate</h1>
+
+<p>Cuts off text after a certain number of characters. The default is 255. Please note that HTML characters are included in this count. The length is specified with the first parameter which defaults to 255. If the second parameter is true the filter will cut the text at length. Otherwise it will discard the last word. If the text was in fact truncated it will append an ellipsis sign ("..."). If you want a different ellipsis sign than "..." you can specify it using the third parameter.
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>number_of_characters <code>Required</code></td>
+  <td>Number of characters to truncate the text by. Default is 255.</td>
+</tr>
+<tr>
+  <td>breakword <code>Optional</code></td>
+  <td>Boolean value. If true, the filter will cut the text at length. If false, it will discard the last wrod. </td>
+</tr>
+<tr>
+  <td>end <code>Optional</code></td>
+  <td>Override the default '...' trailing characters after the truncation.</td>
+</tr>
+</tbody>
+</table></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ "I only want to show the first sentence. Not the second."|truncate(40) }} 
+{{ "I only want to show the first sentence. Not the second."|truncate(35, True, '..........') }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">I only want to show the first sentence.
+I only want to show the first sente.......... 
+</code></pre>
+
+    </div>
+</body>
+</html>

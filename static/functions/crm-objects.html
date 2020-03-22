@@ -1,0 +1,83 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>crm_objects</h1>
+
+<p>Gets a list of objects from the HubSpot CRM.</p>
+
+<p>This function returns an object with the following attributes: <code>has_more</code>, <code>total</code>, <code>offset</code> and <code>results</code>.</p>
+
+<ul>
+<li><code>has_more</code> indicates there are more results available beyond this batch (total &gt; offset).</li>
+<li><code>total</code> is the total number of results available.</li>
+<li><code>offset</code> is the offset to use for the next batch of results.</li>
+<li><em><code>results</code></em> returns an array of the specified objects matching the function's parameters.</li>
+</ul>
+
+<p>Results can be sorted using at least one order parameter in the query. For example, <code>crm_objects("contact", "firstname=Bob&amp;order=lastname&amp;order=createdate")</code> will order contacts with the first name <code>"Bob"</code> by last name and then by <code>createdate</code>. To reverse a sort, prepend <code>-</code> to the property name like <code>order=-createdate</code>.<br />
+For security purposes, only Product objects can be retrieved on a publicly accessible page. Any other object type must be hosted on a page which is either <a href="https://knowledge.hubspot.com/cos-pages-editor/how-can-i-password-protect-my-pages">password protected</a> or requires a <a href="https://knowledge.hubspot.com/articles/kcs_article/cms-pages-editor/control-audience-access-to-pages">CMS Membership login</a>. Objects in the <code>results</code> array are returned as a dict of properties and values.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set objects = crm_objects("contact", "firstname__not_null=&amp;limit=3", "firstname,lastname") %} 
+{{ objects }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">{has_more=true, offset=3, total=331, results=[{firstname=Brian, id=44151, lastname=Halligan}, {firstname=Dharmesh, id=44051, lastname=Shah}, {firstname=George, id=88551, lastname=Washington}]}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>object_type</td>
+  <td>String</td>
+  <td>Contact, product, company, deal, ticket or quote.</td>
+</tr>
+<tr>
+  <td>query</td>
+  <td>String</td>
+  <td>A query string, delimited by &amp;. All expressions are ANDed together. Supported operators are eq (default), neq, lt, lte, gt, gte, is_null and not_null.</td>
+</tr>
+<tr>
+  <td>properties</td>
+  <td>String</td>
+  <td>A comma-separated list of properties to return. By default, a small set of common properties are returned. The id property is always returned.</td>
+</tr>
+<tr>
+  <td>formatting</td>
+  <td>Boolean</td>
+  <td>Format values such as dates and currency according to this portal's settings. Omit or pass false for raw strings.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

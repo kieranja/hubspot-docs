@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Post Listing</h1>
+
+<p>Adds a listing of most popular or top posts.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% post_listing "post_listing" %}
+{% post_listing "top_posts" select_blog='default', label='Recent Posts', overrideable=False, list_title='Recent Posts', listing_type='recent', max_links=5 %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;span id="hs_cos_wrapper_top_posts" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_post_listing" style="" data-hs-cos-general-type="widget" data-hs-cos-type="post_listing"&gt;
+    &lt;div class="block"&gt;
+        &lt;h3&gt;Most popular posts&lt;/h3&gt;
+        &lt;div class="widget-module"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="http://www.underseaband.com/blog/5-emerging-bands-that-you-need-to-hear"&gt;5 emerging bands that you need to hear&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.underseaband.com/blog/pedal-board-power-supplies"&gt;Pedal Board Power Supplies&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.underseaband.com/blog/pedal-board-wiring"&gt;Pedal Board Wiring&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.underseaband.com/blog/pedal-board-layouts"&gt;Pedal Board Layouts&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="http://www.underseaband.com/blog/your-teeth-shake"&gt;Your Teeth Shake&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/span&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>select_blog</td>
+  <td>'default' or blog ID</td>
+  <td> Selects the HubSpot blog to use for the listing. This parameter uses either an blog ID or 'default' value.</td>
+  <td>'default'</td>
+</tr>
+<tr>
+  <td>list_title</td>
+  <td>String</td>
+  <td>List title to display.</td>
+  <td>''</td>
+</tr>
+<tr>
+  <td>list_tag</td>
+  <td>String</td>
+  <td>Sets the tag used for the list. Value should generally be 'ul' or 'ol'.</td>
+  <td>'ul'</td>
+</tr>
+<tr>
+  <td>title_tag</td>
+  <td>String</td>
+  <td>Sets the tag used for the list title.</td>
+  <td>'h3'</td>
+</tr>
+<tr>
+  <td>listing_type</td>
+  <td>String</td>
+  <td>List the blog posts by most recent or most popular in a time range. Possible values include recent, popular_all_time, popular_past_year, popular_past_six_months, and popular_past_month.</td>
+  <td>'recent'</td>
+</tr>
+<tr>
+  <td>max_links</td>
+  <td>Number</td>
+  <td> Maximum number of blog posts to list.</td>
+  <td>5</td>
+</tr>
+<tr>
+  <td>include_featured_image</td>
+  <td>Boolean</td>
+  <td> Display featured image along with post link.</td>
+  <td>False</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

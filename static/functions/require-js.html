@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>require_js</h1>
+
+<p>This function enqueues a script to be rendered in either the head tag or footer. The HubL is replaced by an empty line and included in either <code>{{ standard_footer_includes }}</code> (the default) or <code>{{ standard_header_includes }}</code> if the call contains the <code>'head'</code> parameter.</p>
+
+<p>To enqueue an inline script to be rendered in the head tag via a script element, use the <code>{% require_js %} and {% end_require_js %}</code> tag instead with you script tags and JS code inside.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ standard_header_includes }}
+&lt;!-- more html --&gt;
+{{ require_js("http://example.com/path/to/footer-file.js", "footer") }}
+{{ require_js("http://example.com/path/to/head-file.js", "head") }}
+
+{{ standard_footer_includes }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;!-- other standard header html --&gt;
+&lt;script src="http://example.com/path/to/head-file.js"&gt;&lt;/script&gt;
+
+&lt;!-- more html --&gt;
+
+&lt;script src="http://example.com/path/to/footer-file.js"&gt;&lt;/script&gt;
+&lt;!-- other standard footer html --&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

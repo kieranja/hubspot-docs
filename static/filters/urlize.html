@@ -1,0 +1,66 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>urlize</h1>
+
+<p>Converts URLs in plain text into clickable links. If you pass the filter an additional integer it will shorten the urls to that number. The second parameter is a boolean that dictates whether the link is rel="no follow". The final parameter lets you specify whether the link will open in a new tab.
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>shorten_text <code>Optional</code></td>
+  <td>Integer that will shorten the urls to desired number.</td>
+</tr>
+<tr>
+  <td>no_follow <code>Optional</code></td>
+  <td>Boolean value to indicate whether the link is rel="no follow".</td>
+</tr>
+<tr>
+  <td>target='_blank' <code>Optional</code></td>
+  <td>Specifies whether the link will open in a new tab.</td>
+</tr>
+</tbody>
+</table></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ "http://hubspot.com/"|urlize }}
+{{ "http://hubspot.com/"|urlize(10,true) }}
+{{ "http://hubspot.com/"|urlize('',true) }}
+{{ "http://hubspot.com/"|urlize('',false,target='_blank') }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;a href="//hubspot.com/"&gt;http://hubspot.com/&lt;/a&gt;
+&lt;a href="//hubspot.com/" rel="nofollow"&gt;http://...&lt;/a&gt;
+&lt;a href="//hubspot.com/" rel="nofollow"&gt;http://hubspot.com/&lt;/a&gt;
+&lt;a href="//hubspot.com/" target="_blank"&gt;http://hubspot.com/&lt;/a&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

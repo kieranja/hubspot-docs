@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Import</h1>
+
+<p>Another useful feature of macros is that they can be used across templates by importing one template file into another. To do this you will need to use the <strong>import</strong> tag. The import tag will let you specify a Design Manager file path to the template that contains your macros and give the macros a name in the template that you are including them in. You can then pass values into these macros without needing to redefine them.</p>
+
+<p>For example, let's say that you have a .html template file that contains the following 2 macros. One macro is defined to set up a header tag and one is defined to generate a footer tag. This file is saved in Design Manager with the name <code>my_macros.html</code>.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">&lt;!-- my_macros.html file --&gt;
+{% macro header(tag, title_text) %}
+    &lt;header&gt; &lt;{{ tag }}&gt;{{ title_text }} &lt;/{{tag}}&gt; &lt;/header&gt;
+{% endmacro %}
+
+{% macro footer(tag, footer_text) %}
+     &lt;footer&gt; &lt;{{ tag }}&gt;{{ footer_text }} &lt;/{{tag}}&gt; &lt;/footer&gt;
+{% endmacro %}
+</code></pre>
+
+<p>In the template that will use these macros, an import tag is used that specifies the file path to the <code>my_macros.html</code> file. It also names the group of macros (in this example <code>header_footer</code>). Macros can then be executed by appending the macro name to the name given to the imported template. See the example below.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% import 'custom/page/web_page_basic/my_macros.html' as header_footer %}
+{{ header_footer.header('h1', 'My page title') }}
+&lt;p&gt;Some content&lt;/p&gt;
+{{ header_footer.footer('h3', 'Company footer info') }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;header&gt;&lt;h1&gt;My page title&lt;/h1&gt;&lt;/header&gt;
+&lt;p&gt;Some content&lt;/p&gt;
+&lt;footer&gt;&lt;h3&gt;Company footer info&lt;/h3&gt;&lt;/footer&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

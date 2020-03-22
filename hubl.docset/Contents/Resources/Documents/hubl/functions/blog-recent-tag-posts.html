@@ -1,0 +1,83 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>blog_recent_tag_posts</h1>
+
+<p>The <code>blog_recent_tag_posts</code> function returns a sequence of blog post objects for a specified tag or tags, sorted by most recent first. This sequence of posts can be saved into a variable and iterated through with a for loop, creating a custom post listing of posts by a particular tag or tags.</p>
+
+<p>The function takes three parameters. The first parameter specifies which blog to collect posts from. The value should be <code>'default'</code> or the blog ID of a particular blog (available in the URL of the Blog dashboard).</p>
+
+<p>The second parameter specifies which tags to use, either a single tag or an array of up to 10 tags separated by commas. This parameter can use <strong><code>tag.slug</code></strong> for a particular tag from <code>content.tag_list</code> or accepts a lowercase hyphenated name such as <code>'marketing-tips'</code>.</p>
+
+<p>The third parameter specifies how many posts are retrieved.</p>
+
+<p>The first line of the example below demonstrates how the function returns a sequence of posts by tag. The second line shows the function used to save a sequence in a variable which is then looped through. <a href="/docs/hubl/variables#blog-variables">Any blog post variables</a> should use the name of the individual loop item rather than <code>content.</code>. In the example, <code>tag_post.name</code> is used. This technique can be used, not only on blog templates, but also regular pages.</p>
+
+<p>You can use this function as the foundation for a related posts section of an individual blog post layout. To learn more about creating a related posts section, <a href="/tutorials/creating-a-related-post-listing">check out this tutorial</a>.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ blog_recent_tag_posts('default', 'marketing-tips', 5 ) }}
+{% set tag_posts = blog_recent_tag_posts('default', ['marketing', 'fun', 'inbound'], 3) %}
+{% for tag_post in tag_posts %}
+    &lt;div class="post-title"&gt;{{ tag_post.name }}&lt;/div&gt;
+{% endfor %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">[Post about Marketing 1, Post about Marketing 2, Post about Marketing 3, Post about Marketing 4, Post about Marketing 5]
+
+&lt;div class="post-title"&gt;Post about Marketing&lt;/div&gt;
+&lt;div class="post-title"&gt;Post about Fun&lt;/div&gt;
+&lt;div class="post-title"&gt;Post about Inbound&lt;/div&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>selected_blog</td>
+  <td>Blog id or 'default'</td>
+  <td>Specifies which blog to use.</td>
+</tr>
+<tr>
+  <td>tag_slug</td>
+  <td>String</td>
+  <td>Specifies which tag to filter on.</td>
+</tr>
+<tr>
+  <td>limit</td>
+  <td>Integer</td>
+  <td>Specifies the number of posts to add to the sequence.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

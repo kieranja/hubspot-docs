@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>batch</h1>
+
+<p>A batch filter groups up items within a sequence.
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>linecount <code>Required</code></td>
+  <td>The number of items to include in the batch</td>
+</tr>
+<tr>
+  <td>fill_with <code>Optional</code></td>
+  <td>Specifies what to include in order to fill up any missing items</td>
+</tr>
+</tbody>
+</table></p>
+
+<p>In the example below, there is variable containing a sequence of types of fruits. The batch filter is applied to a loop that iterates through the sequence. The nested loop runs three times to print 3 types of fruit per row, before the outer loop runs again. Notice in the final output that since there are only 5 types of fruit, the final item is replaced by a &amp;nbsp (the second parameter).</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set rows = ['apples', 'oranges', 'pears', 'grapes', 'blueberries'] %}
+
+&lt;table&gt;
+{% for row in rows|batch(3, '&amp;nbsp;') %}
+   &lt;tr&gt;
+    {% for column in row %}
+        &lt;td&gt;{{ column }}&lt;/td&gt;
+    {% endfor %}
+    &lt;/tr&gt; 
+{% endfor %}
+&lt;/table&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;table&gt;
+&lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;apples&lt;/td&gt;
+        &lt;td&gt;oranges&lt;/td&gt;
+        &lt;td&gt;pears&lt;/td&gt;
+   &lt;/tr&gt; 
+   &lt;tr&gt;
+        &lt;td&gt;grapes&lt;/td&gt;
+        &lt;td&gt;blueberries&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt; 
+&lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

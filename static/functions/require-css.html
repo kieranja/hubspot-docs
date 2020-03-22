@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>require_css</h1>
+
+<p>This function enqueues a CSS file to be rendered in the head element. All CSS link tags are grouped together and render before any JavaScript tags. The HubL is replaced with an empty line and then a link tag is added to <code>{{ standard_header_includes }}</code>. This method requires an absolute URL; CMS content with a known relative URL can be required by using the <code>get_asset_url()</code> function.</p>
+
+<p>To enqueue an inline style to be rendered in the <code>head</code> via a style tag element, use the <code>{% require_css %} and {% end_require_css %}</code> tag instead with your style tags and CSS inside of that.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ standard_header_includes }}
+&lt;!-- more html --&gt;
+{{ require_css("http://example.com/path/to/file.css") }}
+{{ require_css(get_asset_url("/relative/path/to/file.css")) }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;!-- other standard header html --&gt;
+&lt;link type="text/css" rel="stylesheet" href="http://example.com/path/to/file.css"&gt;
+&lt;link type="text/css" rel="stylesheet" href="http://example.com/relative/path/to/file.css"&gt;
+&lt;!-- more html --&gt;
+</code></pre>
+
+    </div>
+</body>
+</html>

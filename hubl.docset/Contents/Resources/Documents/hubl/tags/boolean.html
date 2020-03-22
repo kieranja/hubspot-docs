@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>Boolean</h1>
+
+<p>A boolean module creates a checkbox in the UI that prints "true" or "false." In addition to printing the value, this module is useful for defining conditional template logic, when combined with the parameter <strong>export&#95;to&#95;template&#95;context</strong>. Learn more about <a href="/docs/building-blocks/modules/export-to-template-context"><strong>export&#95;to&#95;template&#95;context here</strong></a>.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% boolean "boolean" %}
+{% boolean "nav_toggle" label='Hide navigation', value=False, no_wrapper=True %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">false
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+  <th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>value</td>
+  <td>Boolean</td>
+  <td>Determines whether the checkbox is checked or unchecked.</td>
+  <td>False</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

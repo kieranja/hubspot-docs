@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>menu</h1>
+
+<p>Returns the nested link structure of an advanced menu. Menu nodes have a variety of <a href="/docs/hubl/variables#menu-node-variables">properties</a> that can be used on objects that are returned.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set node = menu(987) %}
+{% for child in node.children %}
+    {{ child.label }}&lt;br&gt;
+{% endfor %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">page1&lt;br&gt;
+page2&lt;br&gt;
+page3&lt;br&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>menu_id</td>
+  <td>Id</td>
+  <td>Required. The id of the menu passed as a number.</td>
+</tr>
+<tr>
+  <td>root_type</td>
+  <td>Enumeration</td>
+  <td>Root type of the menu ("site_root", "top_parent", "parent", "page_name", "page_id", "breadcrumb").</td>
+</tr>
+</tbody>
+</table>
+
+<p>"site_root" denotes static - Always show top-level pages in menu.
+"top_parent" denotes dynamic by section - Show pages in menu that are related to section being viewed.
+"parent" denotes dynamic by page - Show pages in menu that are related to page being viewed.
+"breadcrumb" denotes breadcrumb style path menu (uses horizontal flow).
+ | 
+| root_key | String | Root key (id or name) when using "page_name" or "page_id". |</p>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>list</h1>
+
+<p>Convert the number values into a list. If it was a string the returned list will be a list of characters. To add strings to a sequence, simply add them to the string variables to the sequence delimiters &#91; &#93;.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% set one = 1 %}
+{% set two = 2 %}
+{% set three = 3 %}
+{% set four = ["four"] %}
+{% set list_num = one|list + two|list + three|list + four|list %}
+{{ list_num }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">[1,2,3]
+</code></pre>
+
+    </div>
+</body>
+</html>

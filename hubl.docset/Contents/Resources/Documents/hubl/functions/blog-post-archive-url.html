@@ -1,0 +1,74 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>blog_post_archive_url</h1>
+
+<p>The <code>blog_post_archive_url</code> function returns a full URL to the archive listing page for the given date values on the specified blog. This function has two required parameters and two optional parameters. The first parameter is a blog ID or simply the keyword <code>'default'</code>. The second is the year of archived posts you'd like to display.</p>
+
+<p>The optional parameters include the month and day of archived posts you'd like to display, respectively.</p>
+
+<p>The example below shows how this function can be used as an anchor's <code>href</code>.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">&lt;a href="{{ blog_post_archive_url('default', 2017, 7, 5) }}"&gt;Posts from July 5th, 2017&lt;/a&gt;
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">&lt;a href="http://blog.hubspot.com/marketing/archive/2017/07/05"&gt;Posts from July 5th, 2017&lt;/a&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>selected_blog</td>
+  <td>Blog id or 'default'</td>
+  <td>Specifies which blog to use.</td>
+</tr>
+<tr>
+  <td>year</td>
+  <td>Integer</td>
+  <td>The year.</td>
+</tr>
+<tr>
+  <td>month</td>
+  <td>Integer</td>
+  <td>The optional month.</td>
+</tr>
+<tr>
+  <td>day</td>
+  <td>Integer</td>
+  <td>The optional day.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>

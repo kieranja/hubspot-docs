@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>dictsort</h1>
+
+<p>Sort a dict and yield (key, value) pairs. Dictionaries are unsorted by default, but you can print a dictionary, sorted by key or value. The first parameter is a boolean to determine, whether or not the sorting is case sensitive. The second parameter determines whether to sort the dict by key or value. The example below prints a sorted contact dictionary, with all the known details about the contact.
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>case_sensitive <code>Required</code></td>
+  <td>Determines if sorting is case sensitive</td>
+</tr>
+<tr>
+  <td>sort_by <code>Required</code></td>
+  <td>Determines whether to sort by key or value</td>
+</tr>
+</tbody>
+</table></p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{% for item in contact|dictsort(false, 'value') %}
+    {{item}}
+{% endfor %}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">A sorted contact dictionary
+</code></pre>
+
+    </div>
+</body>
+</html>

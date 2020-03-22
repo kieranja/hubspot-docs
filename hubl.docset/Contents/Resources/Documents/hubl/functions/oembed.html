@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha256-gzohnzxILb7OZZch6c8mySnK1r0yFviwmBR+1E5O0RM=" crossorigin="anonymous" />
+<style>
+    .markdown-body {
+        box-sizing: border-box;
+        
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    @media (max-width: 767px) {
+        .markdown-body {
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1>oembed</h1>
+
+<p>Returns OEmbed data dictionary for given request.</p>
+
+<h4>Example</h4>
+
+<pre><code class="jinja2">{{ oembed({ url: "https://www.youtube.com/watch?v=KqpFNtbEOh8"}) }}
+</code></pre>
+
+<h4>Output</h4>
+
+<pre><code class="jinja2">OEmbedResponse{type=video, version=1.0, html=&lt;iframe width="480" height="270" src="https://www.youtube.com/embed/KqpFNtbEOh8?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;, title=Marketing Is a Marathon — Build a Complete Customer Experience, authorName=HubSpot, authorUrl=https://www.youtube.com/user/HubSpot, providerName=YouTube, providerUrl=https://www.youtube.com/, thumbnailUrl=https://i.ytimg.com/vi/KqpFNtbEOh8/hqdefault.jpg, thumbnailWidth=480, thumbnailHeight=360}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Type</th>
+  <th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>request</td>
+  <td>String</td>
+  <td>Request object, {url: string, max_width: long, max_height: long}.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</body>
+</html>
